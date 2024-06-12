@@ -2,56 +2,70 @@
 import Image from "next/image";
 import bg from "@/assets/images/bg.jpg";
 import { useEffect, useState } from "react";
+import {
+  IconPlayerPause,
+  IconPlayerPauseFilled,
+  IconPlayerPlayFilled,
+  IconPlayerSkipForward,
+  IconRestore,
+} from "@tabler/icons-react";
 
-const statesDuration= [25, 5, 25, 5, 25, 5, 25, 15, 25, 5, 25, 5, 25, 5, 25];
+// const statesDuration = [25, 5, 25, 5, 25, 5, 25, 15, 25, 5, 25, 5, 25, 5, 25];
 
 export default function Home() {
   const [seconds, setSeconds] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(25);
+  const [status, setStatus] = useState<"playing" | "paused">("playing");
 
   const circumference = 2 * Math.PI * 50;
   const strokeDashoffset = circumference - (minutes / 25) * circumference;
 
   useEffect(() => {
-    const intervalSec = setInterval(() => {
-      setSeconds((prev) => {
-        if (prev <= 0) {
-          setMinutes((prev) => (prev === 0 ? 25 : prev - 1));
-          return 59;
-        } else return prev - 1;
-      });
-    }, 1000);
+    let intervalId = null;
+    if (status === "playing")
+      intervalId = setInterval(() => {
+        setSeconds((prev) => {
+          if (prev <= 0) {
+            setMinutes((prev) => (prev === 0 ? 25 : prev - 1));
+            return 59;
+          } else return prev - 1;
+        });
+      }, 1000);
+    else if (intervalId) clearInterval(intervalId);
 
     return () => {
-      clearInterval(intervalSec);
+      if (intervalId) clearInterval(intervalId);
     };
-  }, []);
+  }, [status]);
 
   const padStart = (num: number) => String(num).padStart(2, "0");
 
   return (
-    <main className="bg-radial-gradient-in relative flex min-h-screen w-screen items-center justify-center text-text">
+    <main
+      className={`relative flex min-h-screen w-screen items-center justify-center text-center text-text transition-all duration-700 ${status === "paused" && "bg-base"}`}
+    >
       <Image src={bg} fill alt="bg" className="-z-10 object-cover" />
 
-      <div className="bg-radial-gradient-out absolute left-0 top-0 h-full w-full" />
+      <div className="bg-radial-gradient-in absolute left-0 top-0 h-full w-full" />
+      {/* <div className="bg-radial-gradient-out absolute left-0 top-0 h-full w-full" /> */}
 
-      <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-b from-base from-[10%] via-base/20 via-[30%] to-base/10" />
+      {/* <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-b from-base from-[10%] via-base/20 via-[30%] to-base/10" /> */}
 
-      <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-surface">
+      <div className="absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-surface/75 blur-effect">
         {[...new Array(60)].map((_, index) => (
           <div
             key={`second-hand-${index}`}
-            className={`absolute left-1/2 top-1/2 flex h-1 w-[230px] origin-left justify-end gap-1 rounded transition-all duration-300`}
+            className={`absolute left-1/2 top-1/2 flex h-1 w-[180px] origin-left justify-end gap-1 rounded transition-all duration-300`}
             style={{ transform: `rotate(${index * 6 - 84}deg)` }}
           >
             <div
-              className={`h-1 w-3 rounded-full transition-all duration-300 ${index < seconds || seconds === 0 ? "bg-rose" : "bg-muted"}`}
+              className={`h-1 w-3 rounded-full transition-all duration-300 ${index < seconds || seconds === 0 ? "bg-foam" : "blur-effect bg-muted/50"}`}
             />
           </div>
         ))}
       </div>
 
-      <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-surface">
+      <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full">
         <div className="h-full w-full">
           <svg className="-rotate-90" width="100%" viewBox="0 0 102 102">
             <circle
@@ -63,7 +77,7 @@ export default function Home() {
               cy="51"
             />
             <circle
-              stroke="hsl(var(--color-love))"
+              stroke="hsl(var(--color-rose))"
               strokeWidth="1"
               strokeDasharray={circumference + " " + circumference}
               style={{ strokeDashoffset }}
@@ -75,11 +89,36 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      <div className="relative flex h-[400px] w-[400px] flex-col items-center justify-center gap-1 rounded-full bg-surface">
-        <h5 className="text-xl font-medium text-subtle">25 Mins</h5>
-        <h3 className="text-7xl font-semibold">
+
+      <div className="relative flex h-[300px] w-[300px] flex-col items-center justify-center gap-2 rounded-full">
+        <h5 className="text-lg font-medium text-subtle">
+          3/8 &middot; Pomodoro
+        </h5>
+        <h3 className="w-full text-center text-7xl font-semibold">
           {padStart(minutes)}:{padStart(seconds)}
         </h3>
+
+        <div className="flex items-center justify-center gap-6 pt-4">
+          <button className="rounded-full p-1.5">
+            <IconRestore size={24} className="text-subtle" />
+          </button>
+          <button
+            className="rounded-full bg-love p-2"
+            tabIndex={1}
+            onClick={() =>
+              setStatus((prev) => (prev === "playing" ? "paused" : "playing"))
+            }
+          >
+            {status === "playing" ? (
+              <IconPlayerPauseFilled className="text-surface" size={32} />
+            ) : (
+              <IconPlayerPlayFilled className="text-surface" size={32} />
+            )}
+          </button>
+          <button className="rounded-full p-1.5">
+            <IconPlayerSkipForward size={24} className="text-subtle" />
+          </button>
+        </div>
       </div>
     </main>
   );

@@ -75,7 +75,7 @@ body {
   background: transparent;
   background: radial-gradient(
     circle,
-    transparent 30%,
+    transparent 10%,
     hsl(var(--color-base)) 90%
   );
 }
@@ -84,7 +84,12 @@ body {
   background: transparent;
   background: radial-gradient(
     circle,
-    hsl(var(--color-base)) 20%,
-    transparent 70%
+    hsl(var(--color-base)) 0%,
+    transparent 30%
   );
+}
+
+.blur-effect {
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
 }
