@@ -2,32 +2,219 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html[data-theme="default"] {
+    --color-base: 249 22 12;
+    --color-surface: 247 23 15;
+    --color-overlay: 248 25 18;
+    --color-muted: 249 12 47;
+    --color-subtle: 248 15 61;
+    --color-text: 245 50 91;
+    --color-love: 343 76 68;
+    --color-gold: 35 88 72;
+    --color-rose: 2 55 83;
+    --color-pine: 197 49 38;
+    --color-foam: 189 43 73;
+    --color-iris: 267 57 78;
+    --color-highlight-low: 244 18 15;
+    --color-highlight-med: 249 15 28;
+    --color-highlight-high: 248 13 36;
+  }
+  html[data-theme="moon"] {
+    --color-base: 246 24 17;
+    --color-surface: 248 24 20;
+    --color-overlay: 248 21 26;
+    --color-muted: 249 12 47;
+    --color-subtle: 248 15 61;
+    --color-text: 245 50 91;
+    --color-love: 343 76 68;
+    --color-gold: 35 88 72;
+    --color-rose: 2 66 75;
+    --color-pine: 197 48 47;
+    --color-foam: 189 43 73;
+    --color-iris: 267 57 78;
+    --color-highlight-low: 245 22 20;
+    --color-highlight-med: 247 16 30;
+    --color-highlight-high: 249 15 38;
+  }
+  html[data-theme="dawn"] {
+    --color-base: 32 57 95;
+    --color-surface: 35 100 98;
+    --color-overlay: 33 43 91;
+    --color-muted: 257 9 61;
+    --color-subtle: 248 12 52;
+    --color-text: 248 19 40;
+    --color-love: 343 35 55;
+    --color-gold: 35 81 56;
+    --color-rose: 3 53 67;
+    --color-pine: 197 53 34;
+    --color-foam: 189 30 48;
+    --color-iris: 268 21 57;
+    --color-highlight-low: 25 35 93;
+    --color-highlight-med: 10 9 86;
+    --color-highlight-high: 315 4 80;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  width: 100%;
+  height: 100%;
+  position: relative;
+  direction: ltr;
+  text-align: center;
+  font-family: "Muli", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  -webkit-font-smoothing: antialiased;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#nuotron {
+  top: 50%;
+  left: 50%;
+  width: 84px;
+  height: 84px;
+  margin-top: -42px;
+  margin-left: -42px;
+  transform: rotate(45deg);
+}
+#nuotron,
+#nuotron *,
+#nuotron *:before {
+  display: block;
+  position: absolute;
+}
+#nuotron .ellipse,
+#nuotron .dot {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+#nuotron .ellipse {
+  border: 8px solid #eb6f92;
+  border-radius: 50%;
+}
+#nuotron .dot {
+  -webkit-animation: dotRotate 4.8s linear infinite;
+  animation: dotRotate 4.8s linear infinite;
+}
+#nuotron .dot:before {
+  content: "";
+  top: -42px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin-left: -12px;
+  border-radius: 50%;
+  background-color: #eb6f92;
+  -webkit-animation: dotEffect 1.2s ease-in-out infinite;
+  animation: dotEffect 1.2s ease-in-out infinite;
+}
+@-webkit-keyframes dotEffect {
+  50% {
+    top: 102px;
   }
+  0%,
+  50%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+}
+@keyframes dotEffect {
+  50% {
+    top: 102px;
+  }
+  0%,
+  50%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+}
+@-webkit-keyframes dotRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dotRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#text {
+  top: 50%;
+  left: 50%;
+  width: 182px;
+  height: 182px;
+  margin-top: -91px;
+  margin-left: -91px;
+}
+#text,
+#text > * {
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+#text .hover,
+#text .website {
+  top: 100%;
+  left: 50%;
+  letter-spacing: 2px;
+  transform: translateX(-50%);
+}
+#text .website {
+  margin-top: 28px;
+  opacity: 0;
+}
+#text .nuotron,
+#text .agency {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 182px;
+  letter-spacing: 30px;
+  opacity: 0;
+}
+#text .nuotron {
+  right: 100%;
+  margin-right: -34px;
+}
+#text .agency {
+  left: 100%;
+}
+#text:hover .nuotron,
+#text:hover .agency {
+  letter-spacing: 14px;
+  opacity: 1;
+}
+#text:hover .nuotron {
+  margin-right: -18px;
+}
+#text:hover .hover {
+  margin-top: 28px;
+  opacity: 0;
+}
+#text:hover .website {
+  margin-top: 0;
+  opacity: 1;
 }
