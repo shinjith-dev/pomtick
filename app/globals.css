@@ -60,12 +60,6 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  direction: ltr;
-  text-align: center;
-  font-family: "Muli", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -77,144 +71,20 @@ body {
   padding: 0;
 }
 
-#nuotron {
-  top: 50%;
-  left: 50%;
-  width: 84px;
-  height: 84px;
-  margin-top: -42px;
-  margin-left: -42px;
-  transform: rotate(45deg);
+.bg-radial-gradient-in {
+  background: transparent;
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    hsl(var(--color-base)) 90%
+  );
 }
-#nuotron,
-#nuotron *,
-#nuotron *:before {
-  display: block;
-  position: absolute;
-}
-#nuotron .ellipse,
-#nuotron .dot {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-#nuotron .ellipse {
-  border: 8px solid #eb6f92;
-  border-radius: 50%;
-}
-#nuotron .dot {
-  -webkit-animation: dotRotate 4.8s linear infinite;
-  animation: dotRotate 4.8s linear infinite;
-}
-#nuotron .dot:before {
-  content: "";
-  top: -42px;
-  left: 50%;
-  width: 16px;
-  height: 16px;
-  margin-left: -12px;
-  border-radius: 50%;
-  background-color: #eb6f92;
-  -webkit-animation: dotEffect 1.2s ease-in-out infinite;
-  animation: dotEffect 1.2s ease-in-out infinite;
-}
-@-webkit-keyframes dotEffect {
-  50% {
-    top: 102px;
-  }
-  0%,
-  50%,
-  100% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(0.5);
-  }
-  75% {
-    transform: scale(1.5);
-  }
-}
-@keyframes dotEffect {
-  50% {
-    top: 102px;
-  }
-  0%,
-  50%,
-  100% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(0.5);
-  }
-  75% {
-    transform: scale(1.5);
-  }
-}
-@-webkit-keyframes dotRotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes dotRotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-#text {
-  top: 50%;
-  left: 50%;
-  width: 182px;
-  height: 182px;
-  margin-top: -91px;
-  margin-left: -91px;
-}
-#text,
-#text > * {
-  display: block;
-  position: absolute;
-  white-space: nowrap;
-  transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-}
-#text .hover,
-#text .website {
-  top: 100%;
-  left: 50%;
-  letter-spacing: 2px;
-  transform: translateX(-50%);
-}
-#text .website {
-  margin-top: 28px;
-  opacity: 0;
-}
-#text .nuotron,
-#text .agency {
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 182px;
-  letter-spacing: 30px;
-  opacity: 0;
-}
-#text .nuotron {
-  right: 100%;
-  margin-right: -34px;
-}
-#text .agency {
-  left: 100%;
-}
-#text:hover .nuotron,
-#text:hover .agency {
-  letter-spacing: 14px;
-  opacity: 1;
-}
-#text:hover .nuotron {
-  margin-right: -18px;
-}
-#text:hover .hover {
-  margin-top: 28px;
-  opacity: 0;
-}
-#text:hover .website {
-  margin-top: 0;
-  opacity: 1;
+
+.bg-radial-gradient-out {
+  background: transparent;
+  background: radial-gradient(
+    circle,
+    hsl(var(--color-base)) 20%,
+    transparent 70%
+  );
 }
