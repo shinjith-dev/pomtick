@@ -23,7 +23,7 @@ const CircularProgress = ({ pomodoro, totalDuration }: Props) => {
             cy="51"
           />
           <circle
-            stroke="hsl(var(--color-rose))"
+            stroke="hsl(var(--color-foam))"
             strokeWidth="1"
             strokeDasharray={circumference + " " + circumference}
             className="transition-all duration-300"
