@@ -10,8 +10,6 @@ const StateProgress = ({ states, activeState }: Props) => {
   const lengthWithoutShortBreak =
     states.filter((state) => state.type !== "short-break").length - 1;
 
-  console.log(lengthWithoutShortBreak, activeStateWIthoutShortBreak);
-
   useEffect(() => {
     const state = states[activeState];
     if (
