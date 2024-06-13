@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 
 import { TConfig, TState, TStatus } from "@/lib/types";
 import Background from "@/components/Background";
-import TimerLayer from "@/components/TimerLayer";
-import StateIndicator from "@/components/StateIndicator";
+import TimerLayer from "@/components/timer";
+import StateIndicator from "@/components/state-indicator";
 import { defaultConfig, defaultStates } from "@/lib/defaults";
 
 export default function Home() {
@@ -50,20 +50,31 @@ export default function Home() {
   }, [states]);
 
   const handleStateUpdate = () => {
-    setActive((prev) => (prev + 2 !== totalStates.current ? prev + 1 : prev));
-    const nextState = states[activeState];
-    const isBreak = nextState.type.includes("break");
-    if (!isBreak) setStatus("paused");
+    if (activeState + 1 !== totalStates.current) {
+      const nextState = states[activeState + 1];
+      const isBreak = nextState.type.includes("break");
+
+      setActive((prev) => prev + 1);
+      if (!isBreak) setStatus("paused");
+    }
   };
+
+  const handlePause = () => setStatus("paused");
 
   return (
     <main className="relative h-full w-full bg-base">
       <div className="relative mx-auto flex min-h-screen w-screen max-w-7xl items-center justify-center text-center text-text">
-        <Background status={status} />
+        <Background
+          status={status}
+          isBreak={
+            states[activeState].type.includes("break") || status === "paused"
+          }
+        />
 
         <TimerLayer
           state={states[activeState]}
           status={status}
+          pause={handlePause}
           setStatus={setStatus}
           updateState={handleStateUpdate}
         />

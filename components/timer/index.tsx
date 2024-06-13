@@ -7,20 +7,26 @@ import React, {
 } from "react";
 
 import { TPomodoro, TState, TStatus } from "@/lib/types";
-import { padStart, toSentenceCase } from "@/lib/utils/stringFns";
-import Secondhands from "./timer/Secondhands";
-import CircularProgress from "./timer/CircularProgress";
-import TimerDisplay from "./timer/TimerDisplay";
-import PomodoroControls from "./timer/PomodoroControls";
+import Secondhands from "./Secondhands";
+import CircularProgress from "./CircularProgress";
+import TimerDisplay from "./TimerDisplay";
+import PomodoroControls from "./PomodoroControls";
 
 type Props = {
   status: TStatus;
   state: TState;
   setStatus: Dispatch<SetStateAction<TStatus>>;
   updateState: () => void;
+  pause: () => void;
 };
 
-const TimerLayer = ({ status, state, setStatus, updateState }: Props) => {
+const TimerLayer = ({
+  status,
+  state,
+  setStatus,
+  updateState,
+  pause,
+}: Props) => {
   const [pomodoro, setPomodoro] = useState<TPomodoro>({
     minutes: state.duration,
     seconds: 0,
@@ -57,6 +63,16 @@ const TimerLayer = ({ status, state, setStatus, updateState }: Props) => {
     setPomodoro({ minutes: state.duration, seconds: 0 });
   }, [state]);
 
+  const handleReset = () => {
+    setPomodoro({ minutes: state.duration, seconds: 0 });
+    pause();
+  };
+
+  const handleSkip = () => {
+    updateState();
+    pause();
+  };
+
   return (
     <>
       <Secondhands pomodoro={pomodoro} />
@@ -67,6 +83,8 @@ const TimerLayer = ({ status, state, setStatus, updateState }: Props) => {
 
         <PomodoroControls
           status={status}
+          skip={handleSkip}
+          reset={handleReset}
           toggleStatus={() =>
             setStatus((prev) => (prev === "paused" ? "playing" : "paused"))
           }
