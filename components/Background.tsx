@@ -10,7 +10,9 @@ const Background = ({ status }: Props) => {
     <>
       <Image src={bg} fill alt="bg" className="object-cover" />
       <div
-        className={`absolute left-0 top-0 h-full w-full transition-all duration-700 ${status === "paused" ? "bg-base" : "bg-base/20"}`}
+        className={
+          "absolute left-0 top-0 h-full w-full transition-all duration-700"
+        }
       />
       <div className="bg-radial-gradient-in absolute left-0 top-0 h-full w-full" />
       {/* <div className="bg-radial-gradient-out absolute left-0 top-0 h-full w-full" /> */}

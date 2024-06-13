@@ -3,9 +3,9 @@ import { TConfig, TState } from "./types";
 export const defaultConfig: TConfig = {
   pomodoro: {
     noOfPomodoro: 8,
-    pomodoroDuration: 25,
-    shortBreakDuration: 5,
-    longBreakDuration: 15,
+    pomodoroDuration: 2,
+    shortBreakDuration: 1,
+    longBreakDuration: 3,
   },
 };
 
