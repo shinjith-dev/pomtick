@@ -78,7 +78,7 @@ const TimerLayer = ({
       <Secondhands pomodoro={pomodoro} />
       <CircularProgress pomodoro={pomodoro} totalDuration={state.duration} />
 
-      <div className="absolute left-1/2 top-[45%] flex h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 rounded-full">
+      <div className="absolute left-1/2 top-[45%] flex h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 rounded-full sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px]">
         <TimerDisplay pomodoro={pomodoro} totalDuration={state.duration} />
 
         <PomodoroControls

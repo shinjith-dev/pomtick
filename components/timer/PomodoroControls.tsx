@@ -16,13 +16,13 @@ type Props = {
 
 const PomodoroControls = ({ status, toggleStatus, skip, reset }: Props) => {
   return (
-    <div className="flex items-center justify-center gap-6 pt-4 text-subtle">
+    <div className="flex items-center justify-center gap-2 pt-2 text-2xl text-subtle sm:gap-4 sm:pt-3 md:gap-6 md:pt-4">
       <button
         className="rounded-full p-1.5 transition-all hover:text-text"
         onClick={reset}
         title="Reset"
       >
-        <IconRestore size={24} />
+        <IconRestore />
       </button>
       <button
         className="rounded-full bg-love p-2 text-surface transition-all hover:bg-love/90"
@@ -31,9 +31,9 @@ const PomodoroControls = ({ status, toggleStatus, skip, reset }: Props) => {
         title={status === "playing" ? "Pause" : "Continue"}
       >
         {status === "playing" ? (
-          <IconPlayerPauseFilled size={32} />
+          <IconPlayerPauseFilled size={30} />
         ) : (
-          <IconPlayerPlayFilled size={32} />
+          <IconPlayerPlayFilled size={30} />
         )}
       </button>
       <button
@@ -41,7 +41,7 @@ const PomodoroControls = ({ status, toggleStatus, skip, reset }: Props) => {
         onClick={skip}
         title="Skip"
       >
-        <IconPlayerSkipForward size={24} />
+        <IconPlayerSkipForward />
       </button>
     </div>
   );

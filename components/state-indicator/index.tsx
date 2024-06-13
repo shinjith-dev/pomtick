@@ -32,10 +32,10 @@ const StateIndicator = ({ states, activeState }: Props) => {
               <div
                 key={`${index}-${state.type}`}
                 title={toSentenceCase(state.type)}
-                className={`flex flex-col items-center transition-all duration-300 rounded-full border ${index === activeState ? "border-iris" : "border-[transparent]"}`}
+                className={`flex flex-col items-center rounded-full border transition-all duration-300 ${index === activeState ? "border-iris" : "border-[transparent]"}`}
               >
                 <div
-                  className={`h-5 w-5 rounded-full border-2 border-surface ${state.type === "pomodoro" ? "bg-pine" : "bg-foam"}`}
+                  className={`h-4 w-4 rounded-full border-2 border-surface sm:h-5 sm:w-5 ${state.type === "pomodoro" ? "bg-pine" : "bg-foam"}`}
                 />
               </div>
             ) : null,
@@ -43,7 +43,7 @@ const StateIndicator = ({ states, activeState }: Props) => {
         </div>
 
         <div
-          className={`text-sm font-medium ${activeStateType === "pomodoro" ? "text-gold" : activeStateType === "short-break" ? "text-foam" : "text-iris"}`}
+          className={`mx-auto w-max text-center text-xs font-medium sm:text-sm ${activeStateType === "pomodoro" ? "text-foam" : "text-iris"}`}
         >
           {toSentenceCase(activeStateType)} &middot; {getStatePhrase()}
         </div>

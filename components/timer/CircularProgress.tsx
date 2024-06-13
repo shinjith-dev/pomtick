@@ -11,7 +11,7 @@ const CircularProgress = ({ pomodoro, totalDuration }: Props) => {
       circumference;
 
   return (
-    <div className="absolute left-1/2 top-[45%] h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full">
+    <div className="absolute left-1/2 top-[45%] h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full sm:h-[270px] sm:w-[270px] md:h-[320px] md:w-[320px]">
       <div className="h-full w-full">
         <svg className="-rotate-90" width="100%" viewBox="0 0 102 102">
           <circle
