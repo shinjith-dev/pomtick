@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pomtick Timer
 
-## Getting Started
+The [Pomtick Web](https://pomtick.shinjith.dev) is a web implementation of Pomtick pomodoro timer!
 
-First, run the development server:
+## What is Pomodoro?
+
+The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a popular time-management method invented by Italian Francesco Cirillo. The Pomodoro Technique is useful if you get distracted while working on a project or want to understand how long a task takes. It’s ideal for many types of work including writing, coding, design, and study.
+
+The technique is popular, perhaps because it’s portable and easy to learn. 
+- Pick one project or task you want to focus on.
+- Set a timer for 25-30 minutes, and get to work.
+- When the buzzer sounds, take a two-to-three-minute break.
+- Repeat.
+- After four sessions, take a longer break.
+
+
+## Features
+
+- **Basic pomodoro functionalities**
+- **Appealing minimal UI**
+- **Intuitive interface**
+- **Visualization and progress indicators**
+
+
+
+## Future Features 
+
+- **Customizable**: Adjust pomodoro/break duration and count 
+- **Multi-platform compatibility**: Create Pomtick for different platforms
+- **Statistics tracking** 
+- **Sound notification**
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/shinjith-dev/pomtick-web.git pomtick-web
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd pomtick-web
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install dependencies
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start the server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Color Palette
 
-## Deploy on Vercel
+This lovely, classy color palette was totally copied from [Rose Pine](https://rosepinetheme.com) [@rose-pine], with heartfelt gratitude!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Contributing
+
+Contributions are always welcome!
+
+See `CONTRIBUTING.md` for ways to get started.
+
+
+## License
+
+- This project is licensed under [MIT](https://choosealicense.com/licenses/mit/)
+
