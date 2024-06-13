@@ -57,7 +57,7 @@ Start the server
 
 ## Color Palette
 
-This lovely, classy color palette was totally copied from [Rose Pine](https://rosepinetheme.com) by @rose-pine, with heartfelt gratitude!
+This lovely, classy color palette was totally copied from [Rose Pine](https://rosepinetheme.com) [[Github](https://github.com/rose-pine)] , with heartfelt gratitude!
 
 
 
