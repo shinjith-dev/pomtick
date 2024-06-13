@@ -1,12 +1,47 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { TStatus } from "@/lib/types";
+import { TConfig, TState, TStatus } from "@/lib/types";
 import Background from "@/components/Background";
 import TimerLayer from "@/components/TimerLayer";
+import StateIndicator from "@/components/StateIndicator";
+import { defaultConfig, defaultStates } from "@/lib/defaults";
 
 export default function Home() {
   const [status, setStatus] = useState<TStatus>("playing");
+  const [config, setConfig] = useState<TConfig>(defaultConfig);
+
+  const [states, setStates] = useState<TState[]>(defaultStates);
+  const [activeState, setActive] = useState<number>(0);
+
+  useEffect(() => {
+    setStates([]);
+    for (let i = 0; i < config.pomodoro.noOfPomodoro; i++) {
+      setStates((prev) => [
+        ...prev,
+        {
+          type: "pomodoro",
+          duration: config.pomodoro.pomodoroDuration,
+        },
+      ]);
+      if (i + 1 === 4)
+        setStates((prev) => [
+          ...prev,
+          {
+            type: "long-break",
+            duration: config.pomodoro.longBreakDuration,
+          },
+        ]);
+      else
+        setStates((prev) => [
+          ...prev,
+          {
+            type: "short-break",
+            duration: config.pomodoro.shortBreakDuration,
+          },
+        ]);
+    }
+  }, [config.pomodoro]);
 
   return (
     <main className="relative h-full w-full bg-base">
@@ -14,6 +49,8 @@ export default function Home() {
         <Background status={status} />
 
         <TimerLayer status={status} setStatus={setStatus} />
+
+        <StateIndicator states={states} activeState={activeState} />
       </div>
     </main>
   );

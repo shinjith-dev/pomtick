@@ -47,7 +47,7 @@ const TimerLayer = ({ status, setStatus }: Props) => {
 
   return (
     <>
-      <div className="absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-surface">
+      <div className="absolute left-1/2 top-[45%] h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-surface">
         {[...new Array(60)].map((_, index) => (
           <div
             key={`second-hand-${index}`}
@@ -60,7 +60,7 @@ const TimerLayer = ({ status, setStatus }: Props) => {
           </div>
         ))}
       </div>
-      <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full">
+      <div className="absolute left-1/2 top-[45%] h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full">
         <div className="h-full w-full">
           <svg className="-rotate-90" width="100%" viewBox="0 0 102 102">
             <circle
@@ -85,7 +85,8 @@ const TimerLayer = ({ status, setStatus }: Props) => {
           </svg>
         </div>
       </div>
-      <div className="relative flex h-[300px] w-[300px] flex-col items-center justify-center gap-2 rounded-full">
+
+      <div className="absolute left-1/2 top-[45%] flex h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 rounded-full">
         <h5 className="text-lg font-medium text-subtle">
           3/8 &middot; Pomodoro
         </h5>
