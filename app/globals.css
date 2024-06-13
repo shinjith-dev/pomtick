@@ -76,7 +76,8 @@ body {
   background: radial-gradient(
     circle,
     transparent 10%,
-    hsl(var(--color-base)) 90%
+    hsl(var(--color-base)) 80%,
+    hsl(var(--color-base)) 100%
   );
 }
 

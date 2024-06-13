@@ -1,0 +1,22 @@
+import Image from "next/image";
+import React from "react";
+import bg from "@/assets/images/bg.jpg";
+import { TStatus } from "@/lib/types";
+
+type Props = { status: TStatus };
+
+const Background = ({ status }: Props) => {
+  return (
+    <>
+      <Image src={bg} fill alt="bg" className="object-cover" />
+      <div
+        className={`absolute left-0 top-0 h-full w-full transition-all duration-700 ${status === "paused" ? "bg-base" : "bg-base/20"}`}
+      />
+      <div className="bg-radial-gradient-in absolute left-0 top-0 h-full w-full" />
+      {/* <div className="bg-radial-gradient-out absolute left-0 top-0 h-full w-full" /> */}
+      {/* <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-b from-base from-[10%] via-base/20 via-[30%] to-base/10" /> */}
+    </>
+  );
+};
+
+export default Background;
