@@ -34,10 +34,11 @@ const StateIndicator = ({ states, activeState }: Props) => {
           {states.map((state, index) => (
             <div
               key={`${index}-${state.type}`}
+              title={toSentenceCase(state.type)}
               className={`flex flex-col items-center rounded-full border-gold ${index === activeState && "border"}`}
             >
               <div
-                className={`h-5 w-5 rounded-full border-surface border-2 ${state.type === "pomodoro" ? "bg-gold" : state.type === "short-break" ? "bg-foam" : "bg-iris"}`}
+                className={`h-5 w-5 rounded-full border-2 border-surface ${state.type === "pomodoro" ? "bg-gold" : state.type === "short-break" ? "bg-foam" : "bg-iris"}`}
               />
             </div>
           ))}

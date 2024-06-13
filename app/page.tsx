@@ -18,12 +18,12 @@ export default function Home() {
 
   useEffect(() => {
     setStates([]);
-    for (let i = 0; i < config.pomodoro.noOfPomodoro; i++) {
+    for (let i = 0; i < config.timer.noOfPomodoro; i++) {
       setStates((prev) => [
         ...prev,
         {
           type: "pomodoro",
-          duration: config.pomodoro.pomodoroDuration,
+          duration: config.timer.pomodoroDuration,
         },
       ]);
       if (i + 1 === 4)
@@ -31,19 +31,19 @@ export default function Home() {
           ...prev,
           {
             type: "long-break",
-            duration: config.pomodoro.longBreakDuration,
+            duration: config.timer.longBreakDuration,
           },
         ]);
-      else if (i !== config.pomodoro.noOfPomodoro - 1)
+      else if (i !== config.timer.noOfPomodoro - 1)
         setStates((prev) => [
           ...prev,
           {
             type: "short-break",
-            duration: config.pomodoro.shortBreakDuration,
+            duration: config.timer.shortBreakDuration,
           },
         ]);
     }
-  }, [config.pomodoro]);
+  }, [config.timer]);
 
   useEffect(() => {
     totalStates.current = states.length;
@@ -51,7 +51,9 @@ export default function Home() {
 
   const handleStateUpdate = () => {
     setActive((prev) => (prev + 2 !== totalStates.current ? prev + 1 : prev));
-    setStatus("paused");
+    const nextState = states[activeState];
+    const isBreak = nextState.type.includes("break");
+    if (!isBreak) setStatus("paused");
   };
 
   return (

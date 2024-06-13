@@ -6,11 +6,15 @@ export type TPomodoro = {
 export type TStatus = "playing" | "paused";
 
 export type TConfig = {
-  pomodoro: {
+  timer: {
     noOfPomodoro: number;
     pomodoroDuration: number;
     shortBreakDuration: number;
     longBreakDuration: number;
+  };
+  flow: {
+    autoStartBreaks: boolean;
+    autoStartPomodoro: boolean;
   };
 };
 
