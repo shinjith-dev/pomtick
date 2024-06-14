@@ -34,7 +34,6 @@ The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a 
 
 - **Multi-platform compatibility**: Create Pomtick for different platforms
 - **Statistics tracking** 
-- **Sound notification**
 
 
 ## Run Locally

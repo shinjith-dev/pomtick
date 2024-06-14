@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="default">
       <body
-        className={`${nunito.className} flex h-screen w-screen flex-col bg-base`}
+        className={`${nunito.className} flex h-screen w-screen flex-col bg-base max-h-screen overflow-hidden`}
       >
         {children}
       </body>
