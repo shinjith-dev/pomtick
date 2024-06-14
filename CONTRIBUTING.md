@@ -1,12 +1,10 @@
 # Contributing
 
-If you would like to contribute by adding links, creating category/directory or developing a new feature,
-you can use this suggested workflow:
+If you would like to contribute by developing a new feature or by fixing bugs/errors, follow these steps. If you're not sure on what to contribute, feel free to choose from `Pending Features & Fixes`.
 
 - Fork this repository;
-- Create a new feature branch based on the `main` branch;
+- Create a new feature/bugfix branch based on the `main` branch;
 - Install dependencies by using `npm`
-- If you're not sure on what to contribute, feel free to choose from `Pending Features & Fixes` and add it as a github issue
 - Implement your changes and ensure there are no errors.
 - Commit your changes, please try to follow `Commit Message Guidelines`.
 - Submit a PR for review, that's it!
@@ -23,9 +21,9 @@ you can use this suggested workflow:
 - Final format for a commit message:
 
 ```bash
-    <type>: <description>  # subject
+<type>: <description>  # subject
 
-    [optional body]
+[optional body]
 ```
 
 ### Message Subject
