@@ -12,7 +12,7 @@ const Select = ({ value, options, onChange }: Props) => {
 
   return (
     <button onClick={() => setExpand((prev) => !prev)} className="sm:relative">
-      <span className="rounded-sm bg-pine/50 px-2 py-0.5">{value} Mins</span>
+      <span className="rounded-sm bg-pine/50 px-2 py-0.5">{value}</span>
       {expanded && (
         <div className="absolute right-8 sm:right-0 top-20 z-20 overflow-hidden rounded sm:top-6">
           <ul className="space-y-1 rounded bg-overlay shadow-md">
@@ -26,7 +26,7 @@ const Select = ({ value, options, onChange }: Props) => {
                   }}
                   className={`w-max px-2 py-1 rounded hover:bg-muted/20 ${option === value && "bg-muted/20"}`}
                 >
-                  {option} Mins
+                  {option}
                 </button>
               </li>
             ))}
