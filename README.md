@@ -77,7 +77,7 @@ This lovely, classy color palette was totally copied from [Rose Pine](https://ro
 
 Contributions are always welcome!
 
-See `CONTRIBUTING.md` for ways to get started.
+See [CONTRIBUTING.md](https://github.com/shinjith-dev/pomtick-web/blob/main/CONTRIBUTING.md) for ways to get started.
 
 
 ## License
