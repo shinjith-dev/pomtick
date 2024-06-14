@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { nunito } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Pomtick",
@@ -16,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="default">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${nunito.className} flex h-screen w-screen flex-col bg-base`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

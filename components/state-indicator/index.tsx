@@ -22,7 +22,7 @@ const StateIndicator = ({ states, activeState }: Props) => {
   };
 
   return (
-    <div className="blur-effect absolute left-1/2 top-[70%] -translate-x-1/2 rounded-xl bg-surface/40">
+    <div className="blur-effect absolute left-1/2 top-[80%] -translate-x-1/2 rounded-xl bg-surface/25 sm:top-[75%] md:top-[70%]">
       <div className="relative rounded-xl p-3">
         <StateProgress states={states} activeState={activeState} />
 
@@ -32,7 +32,7 @@ const StateIndicator = ({ states, activeState }: Props) => {
               <div
                 key={`${index}-${state.type}`}
                 title={toSentenceCase(state.type)}
-                className={`flex flex-col items-center rounded-full border transition-all duration-300 ${index === activeState ? "border-iris" : "border-[transparent]"}`}
+                className={`flex flex-col items-center rounded-full border transition-all duration-300 ${index === activeState ? "border-foam" : "border-[transparent]"}`}
               >
                 <div
                   className={`h-4 w-4 rounded-full border-2 border-surface sm:h-5 sm:w-5 ${state.type === "pomodoro" && index <= activeState ? "bg-pine" : state.type === "long-break" && index <= activeState ? "bg-foam" : state.type === "pomodoro" ? "bg-highlight-high" : "bg-highlight-med"}`}

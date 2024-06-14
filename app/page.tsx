@@ -6,6 +6,8 @@ import Background from "@/components/Background";
 import TimerLayer from "@/components/timer";
 import StateIndicator from "@/components/state-indicator";
 import { defaultConfig, defaultStates } from "@/lib/defaults";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
   const [status, setStatus] = useState<TStatus>("paused");
@@ -15,6 +17,19 @@ export default function Home() {
   const totalStates = useRef<number>(defaultStates.length);
 
   const [activeState, setActive] = useState<number>(0);
+
+  const reset = () => {
+    setActive(0);
+    setStatus("paused");
+  };
+
+  useEffect(() => {
+    reset();
+  }, [config]);
+
+  const isFocused = !(
+    states[activeState].type.includes("break") || status === "paused"
+  );
 
   useEffect(() => {
     setStates([]);
@@ -26,7 +41,7 @@ export default function Home() {
           duration: config.timer.pomodoroDuration,
         },
       ]);
-      if (i + 1 === 4)
+      if ((i + 1) % 4 === 0 && i !== config.timer.noOfPomodoro - 1)
         setStates((prev) => [
           ...prev,
           {
@@ -62,25 +77,24 @@ export default function Home() {
   const handlePause = () => setStatus("paused");
 
   return (
-    <main className="relative h-full w-full bg-base">
-      <div className="relative mx-auto flex min-h-screen w-screen max-w-7xl items-center justify-center text-center text-text">
-        <Background
-          status={status}
-          isBreak={
-            states[activeState].type.includes("break") || status === "paused"
-          }
-        />
+    <>
+      <Navbar hide={isFocused} config={config} updateConfig={setConfig} />
+      <main className="relative z-0 mx-auto w-full max-w-7xl grow">
+        <div className="relative flex h-full w-full items-center justify-center text-center text-text">
+          <Background status={status} isBreak={!isFocused} />
 
-        <TimerLayer
-          state={states[activeState]}
-          status={status}
-          pause={handlePause}
-          setStatus={setStatus}
-          updateState={handleStateUpdate}
-        />
+          <TimerLayer
+            state={states[activeState]}
+            status={status}
+            pause={handlePause}
+            setStatus={setStatus}
+            updateState={handleStateUpdate}
+          />
 
-        <StateIndicator states={states} activeState={activeState} />
-      </div>
-    </main>
+          <StateIndicator states={states} activeState={activeState} />
+        </div>
+      </main>
+      <Footer hide={isFocused} />
+    </>
   );
 }

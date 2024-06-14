@@ -4,31 +4,39 @@ The [Pomtick Web](https://pomtick.shinjith.dev) is a web implementation of Pomti
 
 ## What is Pomodoro?
 
-The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a popular time-management method invented by Italian Francesco Cirillo. The Pomodoro Technique is useful if you get distracted while working on a project or want to understand how long a task takes. It’s ideal for many types of work including writing, coding, design, and study.
+The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a popular time-management method invented by Italian Francesco Cirillo. This strategy is beneficial if you become distracted while working on a project or want to determine how long a task will take. It's intended to help you focus on tasks and minimize procrastination by dividing work into focused intervals broken by brief pauses. It's perfect for a variety of tasks, including writing, coding, designing, and studying.
 
-The technique is popular, perhaps because it’s portable and easy to learn. 
-- Pick one project or task you want to focus on.
-- Set a timer for 25-30 minutes, and get to work.
-- When the buzzer sounds, take a two-to-three-minute break.
-- Repeat.
-- After four sessions, take a longer break.
+- **Work Intervals (Pomodoros)**: You set aside a certain amount of time to focus on a particular activity with few distractions.
+- **Short Breaks**: Following each pomodoro, you take a little break to replenish your mind and body. This allows you to stay focused and avoid burnout during lengthy work sessions.
+
+### Benefits of this Technique
+- **Improved Focus**: By working in small bursts, you teach your brain to concentrate for long periods.
+- **Reduced Procrastination**: Knowing you only have 25 minutes to focus makes it simpler to begin chores that would otherwise appear difficult.
+- **Increased Motivation**: Doing pomodoros provides you a sense of success and keeps you going throughout the day.
+- **Improved Time Management**: The Pomodoro Technique allows you to arrange your daily and avoid being overwhelmed by enormous activities.
+
+### Traditional Timings:
+- **Pomodoro**: 25 minutes
+- **Short Break**: 5 minutes
+- **Long Break (after 4 pomodoros)**: 15-30 minutes
 
 
 ## Features
 
 - **Basic pomodoro functionalities**
 - **Appealing minimal UI**
+- **Customizable**: Adjust pomodoro/break duration and count 
 - **Intuitive interface**
 - **Visualization and progress indicators**
 
 
-
 ## Future Features 
 
-- **Customizable**: Adjust pomodoro/break duration and count 
 - **Multi-platform compatibility**: Create Pomtick for different platforms
 - **Statistics tracking** 
 - **Sound notification**
+
+
 ## Run Locally
 
 Clone the project

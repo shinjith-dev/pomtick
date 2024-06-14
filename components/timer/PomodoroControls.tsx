@@ -16,7 +16,7 @@ type Props = {
 
 const PomodoroControls = ({ status, toggleStatus, skip, reset }: Props) => {
   return (
-    <div className="flex items-center justify-center gap-2 pt-2 text-2xl text-subtle sm:gap-4 sm:pt-3 md:gap-6 md:pt-4">
+    <div className="flex items-center justify-center gap-4 pt-2 text-2xl text-subtle sm:gap-6 sm:pt-3 md:pt-4">
       <button
         className="rounded-full p-1.5 transition-all hover:text-text"
         onClick={reset}
@@ -25,7 +25,7 @@ const PomodoroControls = ({ status, toggleStatus, skip, reset }: Props) => {
         <IconRestore />
       </button>
       <button
-        className="rounded-full bg-love p-2 text-surface transition-all hover:bg-love/90"
+        className="rounded-full bg-foam p-2 text-surface transition-all hover:bg-foam/80"
         tabIndex={1}
         onClick={toggleStatus}
         title={status === "playing" ? "Pause" : "Continue"}
