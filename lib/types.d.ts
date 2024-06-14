@@ -22,3 +22,5 @@ export type TState = {
   type: "pomodoro" | "short-break" | "long-break";
   duration: number;
 };
+
+export type TTheme = "default" | "moon" | "dawn";

@@ -22,7 +22,7 @@ const StateIndicator = ({ states, activeState }: Props) => {
   };
 
   return (
-    <div className="blur-effect absolute left-1/2 top-[70%] -translate-x-1/2 rounded-xl bg-surface/25">
+    <div className="blur-effect absolute left-1/2 top-[80%] -translate-x-1/2 rounded-xl bg-surface/25 sm:top-[75%] md:top-[70%]">
       <div className="relative rounded-xl p-3">
         <StateProgress states={states} activeState={activeState} />
 

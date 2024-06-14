@@ -7,6 +7,7 @@ import TimerLayer from "@/components/timer";
 import StateIndicator from "@/components/state-indicator";
 import { defaultConfig, defaultStates } from "@/lib/defaults";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
   const [status, setStatus] = useState<TStatus>("paused");
@@ -68,7 +69,8 @@ export default function Home() {
 
   return (
     <>
-      <main className="relative mx-auto w-full max-w-7xl grow">
+      <Navbar hide={isFocused} />
+      <main className="relative z-0 mx-auto w-full max-w-7xl grow">
         <div className="relative flex h-full w-full items-center justify-center text-center text-text">
           <Background status={status} isBreak={!isFocused} />
 

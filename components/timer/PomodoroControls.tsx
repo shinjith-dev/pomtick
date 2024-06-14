@@ -16,7 +16,7 @@ type Props = {
 
 const PomodoroControls = ({ status, toggleStatus, skip, reset }: Props) => {
   return (
-    <div className="flex items-center justify-center gap-2 pt-2 text-2xl text-subtle sm:gap-4 sm:pt-3 md:gap-6 md:pt-4">
+    <div className="flex items-center justify-center gap-4 pt-2 text-2xl text-subtle sm:gap-6 sm:pt-3 md:pt-4">
       <button
         className="rounded-full p-1.5 transition-all hover:text-text"
         onClick={reset}
