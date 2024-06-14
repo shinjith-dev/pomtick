@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="default">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${inter.className} flex h-screen w-screen flex-col bg-base`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
