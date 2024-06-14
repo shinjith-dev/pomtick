@@ -25,17 +25,18 @@ The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a 
 
 - **Basic pomodoro functionalities**
 - **Appealing minimal UI**
+- **Customizable**: Adjust pomodoro/break duration and count 
 - **Intuitive interface**
 - **Visualization and progress indicators**
 
 
-
 ## Future Features 
 
-- **Customizable**: Adjust pomodoro/break duration and count 
 - **Multi-platform compatibility**: Create Pomtick for different platforms
 - **Statistics tracking** 
 - **Sound notification**
+
+
 ## Run Locally
 
 Clone the project
