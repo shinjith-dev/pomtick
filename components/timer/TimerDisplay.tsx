@@ -10,7 +10,7 @@ const TimerDisplay = ({ pomodoro, totalDuration }: Props) => {
       <h5 className="text-sm font-medium text-subtle sm:text-[16px] md:text-lg">
         {totalDuration} Mins
       </h5>
-      <h3 className="w-full text-center text-5xl font-semibold sm:text-6xl md:text-7xl">
+      <h3 className="w-full text-text text-center text-5xl font-semibold sm:text-6xl md:text-7xl">
         {padStart(pomodoro.minutes)}:{padStart(pomodoro.seconds)}
       </h3>
     </>

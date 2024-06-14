@@ -86,9 +86,8 @@ body {
   background: radial-gradient(
     circle,
     hsl(var(--color-overlay)) 0%,
-    /* hsl(var(--color-pine)) 30%, */
-    hsl(var(--color-base)) 80%,
-    transparent 100%
+    /* hsl(var(--color-pine)) 30%, */ hsl(var(--color-base)) 80%,
+    hsl(var(--color-base)) 100%
   );
 }
 
