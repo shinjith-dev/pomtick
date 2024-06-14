@@ -2,6 +2,11 @@
 
 The [Pomtick Web](https://pomtick.shinjith.dev) is a web implementation of Pomtick pomodoro timer!
 
+          
+
+![Desktop screenshot](./assets/images/ss-desk.png) | ![Mobile screenshot](./assets/images/ss-mobile.png)
+:------:|:------:
+
 ## What is Pomodoro?
 
 The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a popular time-management method invented by Italian Francesco Cirillo. This strategy is beneficial if you become distracted while working on a project or want to determine how long a task will take. It's intended to help you focus on tasks and minimize procrastination by dividing work into focused intervals broken by brief pauses. It's perfect for a variety of tasks, including writing, coding, designing, and studying.

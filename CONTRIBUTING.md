@@ -14,7 +14,7 @@ you can use this suggested workflow:
 ## Pending Features & Fixes
 
 - **Sound notification**: Sound notification on break start/end
-- **Code optimization**: Includes refactoring, restructuring of directories, optimation using react features, etc
+- **Code optimization**: Includes refactoring, improving SEO, restructuring of directories, optimation using react features, etc
 - **Statistics tracking**: Using cookies to store usage records & derive statistics from it
 
 
