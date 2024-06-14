@@ -18,6 +18,15 @@ export default function Home() {
 
   const [activeState, setActive] = useState<number>(0);
 
+  const reset = () => {
+    setActive(0);
+    setStatus("paused");
+  };
+
+  useEffect(() => {
+    reset();
+  }, [config]);
+
   const isFocused = !(
     states[activeState].type.includes("break") || status === "paused"
   );
@@ -32,7 +41,7 @@ export default function Home() {
           duration: config.timer.pomodoroDuration,
         },
       ]);
-      if (i + 1 === 4)
+      if ((i + 1) % 4 === 0 && i !== config.timer.noOfPomodoro - 1)
         setStates((prev) => [
           ...prev,
           {
@@ -69,7 +78,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar hide={isFocused} />
+      <Navbar hide={isFocused} config={config} updateConfig={setConfig} />
       <main className="relative z-0 mx-auto w-full max-w-7xl grow">
         <div className="relative flex h-full w-full items-center justify-center text-center text-text">
           <Background status={status} isBreak={!isFocused} />

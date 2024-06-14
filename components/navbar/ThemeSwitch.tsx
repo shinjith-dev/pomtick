@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import {
   IconMoonStars,
   IconMoon,
@@ -21,6 +21,19 @@ const themes: Theme[] = [
 const ThemeSwitch = (props: Props) => {
   const [expanded, setExpand] = useState<boolean>(false);
   const [activeTheme, setTheme] = useState<TTheme>("default");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: any) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setExpand(false);
+      }
+    }
+    if (expanded) document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref, expanded]);
 
   useEffect(() => {
     const defaultTheme = document.documentElement.getAttribute("data-theme");
@@ -37,7 +50,7 @@ const ThemeSwitch = (props: Props) => {
   };
 
   return (
-    <div className="group font-medium sm:relative">
+    <div ref={ref} className="group font-medium sm:relative">
       <button
         onClick={() => setExpand((prev) => !prev)}
         className="flex items-center gap-0.5 rounded-md p-1.5 group-hover:bg-muted/20"

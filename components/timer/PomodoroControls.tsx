@@ -25,7 +25,7 @@ const PomodoroControls = ({ status, toggleStatus, skip, reset }: Props) => {
         <IconRestore />
       </button>
       <button
-        className="rounded-full bg-pine p-2 text-surface transition-all hover:bg-pine/90"
+        className="rounded-full bg-foam p-2 text-surface transition-all hover:bg-foam/80"
         tabIndex={1}
         onClick={toggleStatus}
         title={status === "playing" ? "Pause" : "Continue"}

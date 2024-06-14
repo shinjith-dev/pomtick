@@ -1,13 +1,18 @@
 import { josephinSans } from "@/lib/fonts";
 import Link from "next/link";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 import ConfigMenu from "./ConfigMenu";
 import { IconHelp } from "@tabler/icons-react";
+import { TConfig } from "@/lib/types";
 
-type Props = { hide: boolean };
+type Props = {
+  hide: boolean;
+  config: TConfig;
+  updateConfig: Dispatch<SetStateAction<TConfig>>;
+};
 
-const Navbar = ({ hide }: Props) => {
+const Navbar = ({ hide, config, updateConfig }: Props) => {
   return (
     <nav
       className={`relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between p-4 text-sm text-text transition-all duration-500 sm:p-5 ${hide ? "-translate-y-8 opacity-0" : "translate-y-0 opacity-100"}`}
@@ -19,12 +24,12 @@ const Navbar = ({ hide }: Props) => {
         Pomtick
       </Link>
 
-      <ul className="flex gap-2 sm:gap-3 md:gap-4 items-center">
+      <ul className="flex items-center gap-2 sm:gap-3 md:gap-4">
         <li>
           <ThemeSwitch />
         </li>
         <li>
-          <ConfigMenu />
+          <ConfigMenu config={config} updateConfig={updateConfig} />
         </li>
         <li>
           <Link
@@ -33,7 +38,7 @@ const Navbar = ({ hide }: Props) => {
             }
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1.5 hover:bg-muted/20 block rounded-md"
+            className="block rounded-md p-1.5 hover:bg-muted/20"
           >
             <IconHelp size={24} />
           </Link>

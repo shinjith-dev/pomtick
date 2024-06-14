@@ -27,3 +27,11 @@ export const defaultStates: TState[] = [
   { type: "short-break", duration: defaultConfig.timer.shortBreakDuration },
   { type: "pomodoro", duration: defaultConfig.timer.pomodoroDuration },
 ];
+
+export const pomodoroCountChoices = [4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+export const pomodoroDurationChoices = [15, 20, 25, 30, 35, 40, 45, 50];
+
+export const shortBreakDurationChoices = [3, 4, 5, 6, 7];
+
+export const longBreakDurationChoices = [10, 15, 20, 25, 30, 35, 40, 45];
