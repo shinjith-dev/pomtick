@@ -1,6 +1,6 @@
 # Contributing
 
-If you would like to contribute by developing a new feature or by fixing bugs/errors, follow these steps. If you're not sure on what to contribute, feel free to choose from `Pending Features & Fixes`.
+If you would like to contribute by developing a new feature or by fixing bugs/errors, follow these steps. If you're not sure on what to contribute, feel free to choose from `Pending Features & Fixes` and add it as a github issue.
 
 - Fork this repository;
 - Create a new feature/bugfix branch based on the `main` branch;
@@ -14,6 +14,7 @@ If you would like to contribute by developing a new feature or by fixing bugs/er
 - **Sound notification**: Sound notification on break start/end
 - **Code optimization**: Includes refactoring, improving SEO, restructuring of directories, optimation using react features, etc
 - **Statistics tracking**: Using cookies to store usage records & derive statistics from it
+- **Help/Info page**: Create a page explaining pomodoro technique and how to use this platform
 
 
 ## Commit Message Guidelines
