@@ -1,5 +1,5 @@
 import { TState } from "@/lib/types";
-import { toSentenceCase } from "@/lib/utils/stringFns";
+import { toSentenceCase } from "@repo/lib/utils"; 
 import React from "react";
 import StateProgress from "./StatusProgress";
 

@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import { IconAdjustmentsHorizontal } from "@tabler/icons-react";
 import { TConfig } from "@/lib/types";
-import { isObject } from "@/lib/utils/fns";
 import Switch from "../atoms/Switch";
 import Select from "../atoms/Select";
 import {

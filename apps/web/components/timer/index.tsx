@@ -1,17 +1,11 @@
-import React, {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { Dispatch, SetStateAction, useEffect } from "react";
 
-import { TTimer, TState, TStatus } from "@/lib/types";
+import { TState, TStatus } from "@/lib/types";
 import Secondhands from "./Secondhands";
 import CircularProgress from "./CircularProgress";
 import TimerDisplay from "./TimerDisplay";
 import PomodoroControls from "./PomodoroControls";
-import useTimer from "@/lib/hooks/use-timer";
+import useTimer from "@repo/lib/hooks";
 
 type Props = {
   status: TStatus;

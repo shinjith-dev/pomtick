@@ -1,6 +1,6 @@
 import { josephinSans } from "@/lib/fonts";
 import { TTimer } from "@/lib/types";
-import { padStart } from "@/lib/utils/stringFns";
+import { padStart } from "@repo/lib/utils";
 import React from "react";
 
 type Props = { pomodoro: TTimer; totalDuration: number };
