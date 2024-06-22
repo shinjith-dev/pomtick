@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { TStatus, TTimer } from "../types";
+
+export type TState = "playing" | "paused";
+
+export type TTimer = {
+  minutes: number;
+  seconds: number;
+};
 
 const useTimer = (
   value: TTimer,
@@ -8,7 +14,7 @@ const useTimer = (
   pauseCb: () => void,
 ) => {
   const [timer, setTimer] = useState<TTimer>(value);
-  const [state, setState] = useState<TStatus>(
+  const [state, setState] = useState<TState>(
     isInitiallyPlaying ? "playing" : "paused",
   );
 
