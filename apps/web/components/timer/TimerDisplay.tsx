@@ -1,9 +1,9 @@
 import { josephinSans } from "@/lib/fonts";
-import { TPomodoro } from "@/lib/types";
+import { TTimer } from "@/lib/types";
 import { padStart } from "@/lib/utils/stringFns";
 import React from "react";
 
-type Props = { pomodoro: TPomodoro; totalDuration: number };
+type Props = { pomodoro: TTimer; totalDuration: number };
 
 const TimerDisplay = ({ pomodoro, totalDuration }: Props) => {
   return (

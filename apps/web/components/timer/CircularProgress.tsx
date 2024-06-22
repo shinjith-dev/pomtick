@@ -1,7 +1,7 @@
-import { TPomodoro } from "@/lib/types";
+import { TTimer } from "@/lib/types";
 import React from "react";
 
-type Props = { pomodoro: TPomodoro; totalDuration: number };
+type Props = { pomodoro: TTimer; totalDuration: number };
 
 const CircularProgress = ({ pomodoro, totalDuration }: Props) => {
   const circumference = 2 * Math.PI * 50;

@@ -1,4 +1,4 @@
-export type TPomodoro = {
+export type TTimer = {
   minutes: number;
   seconds: number;
 };

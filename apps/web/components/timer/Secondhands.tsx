@@ -1,7 +1,7 @@
-import { TPomodoro } from "@/lib/types";
+import { TTimer } from "@/lib/types";
 import React from "react";
 
-type Props = { pomodoro: TPomodoro };
+type Props = { pomodoro: TTimer };
 
 const Secondhands = ({ pomodoro }: Props) => {
   return (
