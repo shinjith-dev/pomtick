@@ -1,102 +1,100 @@
-import Image from "next/image";
-import { Button } from "@repo/ui/button";
-import styles from "./page.module.css";
+"use client";
+import { useEffect, useRef, useState } from "react";
+
+import { TConfig, TState, TStatus } from "@/lib/types";
+import Background from "@/components/Background";
+import TimerLayer from "@/components/timer";
+import StateIndicator from "@/components/state-indicator";
+import { defaultConfig, defaultStates } from "@/lib/defaults";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [status, setStatus] = useState<TStatus>("paused");
+  const [config, setConfig] = useState<TConfig>(defaultConfig);
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  const [states, setStates] = useState<TState[]>(defaultStates);
+  const totalStates = useRef<number>(defaultStates.length);
+
+  const [activeState, setActive] = useState<number>(0);
+
+  const reset = () => {
+    setActive(0);
+    setStatus("paused");
+  };
+
+  useEffect(() => {
+    reset();
+  }, [config]);
+
+  const isFocused = !(
+    states[activeState].type.includes("break") || status === "paused"
+  );
+
+  useEffect(() => {
+    setStates([]);
+    for (let i = 0; i < config.timer.noOfPomodoro; i++) {
+      setStates((prev) => [
+        ...prev,
+        {
+          type: "pomodoro",
+          duration: config.timer.pomodoroDuration,
+        },
+      ]);
+      if ((i + 1) % 4 === 0 && i !== config.timer.noOfPomodoro - 1)
+        setStates((prev) => [
+          ...prev,
+          {
+            type: "long-break",
+            duration: config.timer.longBreakDuration,
+          },
+        ]);
+      else if (i !== config.timer.noOfPomodoro - 1)
+        setStates((prev) => [
+          ...prev,
+          {
+            type: "short-break",
+            duration: config.timer.shortBreakDuration,
+          },
+        ]);
+    }
+  }, [config.timer]);
+
+  useEffect(() => {
+    totalStates.current = states.length;
+  }, [states]);
+
+  const handleStateUpdate = () => {
+    if (activeState + 1 !== totalStates.current) {
+      const nextState = states[activeState + 1];
+      const isBreak = nextState.type.includes("break");
+
+      setActive((prev) => prev + 1);
+      if (!isBreak) setStatus("paused");
+    }
+  };
+
+  const handlePause = () => setStatus("paused");
+
+  return (
+    <>
+      <Navbar hide={isFocused} config={config} updateConfig={setConfig} />
+      <main className="relative z-0 mx-auto w-full max-w-7xl grow">
+        <div className="relative flex h-full w-full items-center justify-center text-center text-text">
+          <Background status={status} isBreak={!isFocused} />
+
+          <TimerLayer
+            state={states[activeState]}
+            status={status}
+            pause={handlePause}
+            setStatus={setStatus}
+            updateState={handleStateUpdate}
+          />
+
+          <StateIndicator states={states} activeState={activeState} />
         </div>
-        <Button
-          appName="web"
-          className="mx-auto rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-        >
-          Open alert
-        </Button>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file-text.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Footer hide={isFocused} />
+    </>
   );
 }
