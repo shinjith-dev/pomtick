@@ -9,7 +9,7 @@ import useTimer from "@repo/lib/hooks";
 
 type Props = {
   status: TStatus;
-  state: TState;
+  state?: TState;
   setStatus: Dispatch<SetStateAction<TStatus>>;
   updateState: () => void;
   pause: () => void;
@@ -30,14 +30,14 @@ const TimerLayer = ({
     skip,
     reset,
   } = useTimer(
-    { minutes: state.duration, seconds: 0 },
+    { minutes: state?.duration ?? 60, seconds: 0 },
     status === "playing",
     updateState,
     pause,
   );
 
   useEffect(() => {
-    update({ minutes: state.duration, seconds: 0 }, status);
+    update({ minutes: state?.duration ?? 60, seconds: 0 }, status);
   }, [state]);
 
   useEffect(() => {
@@ -48,10 +48,13 @@ const TimerLayer = ({
   return (
     <>
       <Secondhands pomodoro={timer} />
-      <CircularProgress pomodoro={timer} totalDuration={state.duration} />
+      <CircularProgress
+        pomodoro={timer}
+        totalDuration={state?.duration ?? 60}
+      />
 
       <div className="absolute left-1/2 top-[45%] flex h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 rounded-full sm:h-[270px] sm:w-[270px] md:h-[300px] md:w-[300px]">
-        <TimerDisplay pomodoro={timer} totalDuration={state.duration} />
+        <TimerDisplay pomodoro={timer} totalDuration={state?.duration ?? 60} />
 
         <PomodoroControls
           status={status}

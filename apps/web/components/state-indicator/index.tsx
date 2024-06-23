@@ -1,12 +1,12 @@
 import { TState } from "../../lib/types";
-import { toSentenceCase } from "@repo/lib/utils"; 
+import { toSentenceCase } from "@repo/lib/utils";
 import React from "react";
 import StateProgress from "./StatusProgress";
 
 type Props = { states: TState[]; activeState: number };
 
 const StateIndicator = ({ states, activeState }: Props) => {
-  const activeStateType = states[activeState].type;
+  const activeStateType = states[activeState]?.type ?? "pomodoro";
 
   const getStatePhrase = () => {
     switch (activeStateType) {
