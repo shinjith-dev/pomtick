@@ -4,7 +4,7 @@ If you would like to contribute by developing a new feature or by fixing bugs/er
 
 - Fork this repository;
 - Create a new feature/bugfix branch based on the `main` branch;
-- Install dependencies by using `npm`
+- Install dependencies by using `pnpm`
 - Implement your changes and ensure there are no errors.
 - Commit your changes, please try to follow `Commit Message Guidelines`.
 - Submit a PR for review, that's it!
