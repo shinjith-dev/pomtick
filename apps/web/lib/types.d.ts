@@ -23,4 +23,4 @@ export type TState = {
   duration: number;
 };
 
-export type TTheme = "default" | "moon" | "dawn";
+export type TTheme = "main" | "moon" | "dawn";

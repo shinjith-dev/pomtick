@@ -13,6 +13,9 @@
     "./utils": {
       "types": "./src/utils/index.ts",
       "default": "./dist/utils/index.js"
+    },
+    "./themes": {
+      "default": "./dist/themes.js"
     }
   },
   "devDependencies": {

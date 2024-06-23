@@ -8,19 +8,17 @@ import {
 } from "@tabler/icons-react";
 import { TTheme } from "../../lib/types";
 
-type Props = {};
-
 type Theme = { icon: ReactNode; label: string; theme: TTheme };
 
 const themes: Theme[] = [
-  { icon: <IconMoon size={14} />, label: "Rosé Pine", theme: "default" },
+  { icon: <IconMoon size={14} />, label: "Rosé Pine", theme: "main" },
   { icon: <IconMoonStars size={14} />, label: "Rosé Pine Moon", theme: "moon" },
   { icon: <IconSun size={14} />, label: "Rosé Pine Dawn", theme: "dawn" },
 ];
 
-const ThemeSwitch = (props: Props) => {
+const ThemeSwitch = () => {
   const [expanded, setExpand] = useState<boolean>(false);
-  const [activeTheme, setTheme] = useState<TTheme>("default");
+  const [activeTheme, setTheme] = useState<TTheme>("main");
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

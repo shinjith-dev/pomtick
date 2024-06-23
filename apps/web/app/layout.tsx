@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="default">
+    <html lang="en" data-theme="main">
       <body
         className={`${nunito.className} flex h-screen w-screen flex-col bg-base max-h-screen overflow-hidden`}
       >
