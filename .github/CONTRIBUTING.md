@@ -22,10 +22,23 @@ If you would like to contribute by developing a new feature or by fixing bugs/er
 - Final format for a commit message:
 
 ```bash
-<type>: <description>  # subject
+<type>([optional scope]): <description>  # subject
 
 [optional body]
 ```
+
+### Scope
+
+- Scope of the changes included in the commit.
+- It can be:
+    - `global` or simply omit the scope
+        ```bash
+        <type>: <description>
+        ...
+        ```
+    - `web`
+    - `native`
+    - or any `app` or `package`
 
 ### Message Subject
 

@@ -1,10 +1,10 @@
 # Pomtick Timer
 
-The [Pomtick Web](https://pomtick.shinjith.dev) is a web implementation of Pomtick pomodoro timer!
+The [Pomtick](https://pomtick.pages.dev) is a minimal classy pomodoro timer!
 
           
 
-![Desktop screenshot](./assets/images/ss-desk.png) | ![Mobile screenshot](./assets/images/ss-mobile.png)
+![Desktop screenshot](.github/assets/images/ss-desk.png) | ![Mobile screenshot](.github/assets/images/ss-mobile.png)
 :------:|:------:
 
 ## What is Pomodoro?
@@ -30,6 +30,7 @@ The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a 
 
 - **Basic pomodoro functionalities**
 - **Appealing minimal UI**
+- **Themeable**: Multiple color theme choices 
 - **Customizable**: Adjust pomodoro/break duration and count 
 - **Intuitive interface**
 - **Visualization and progress indicators**
@@ -46,25 +47,25 @@ The [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) is a 
 Clone the project
 
 ```bash
-  git clone https://github.com/shinjith-dev/pomtick-web.git pomtick-web
+  git clone https://github.com/shinjith-dev/pomtick.git pomtick
 ```
 
 Go to the project directory
 
 ```bash
-  cd pomtick-web
+  cd pomtick
 ```
 
 Install dependencies
 
 ```bash
-  npm install
+  pnpm install
 ```
 
 Start the server
 
 ```bash
-  npm run dev
+  pnpm run dev
 ```
 
 ## Color Palette
@@ -77,7 +78,7 @@ This lovely, classy color palette was totally copied from [Rose Pine](https://ro
 
 Contributions are always welcome!
 
-See [CONTRIBUTING.md](https://github.com/shinjith-dev/pomtick-web/blob/main/CONTRIBUTING.md) for ways to get started.
+See [CONTRIBUTING.md](https://github.com/shinjith-dev/pomtick-web/blob/main/.github/CONTRIBUTING.md) for ways to get started.
 
 
 ## License
