@@ -130,6 +130,9 @@ importers:
       typescript:
         specifier: ^5
         version: 5.5.2
+      vercel:
+        specifier: ^34.2.7
+        version: 34.2.7
 
   packages/eslint-config:
     devDependencies:
