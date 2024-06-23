@@ -83,15 +83,13 @@ export default function Home() {
         <div className="relative flex h-full w-full items-center justify-center text-center text-text">
           <Background status={status} isBreak={!isFocused} />
 
-          {
-            <TimerLayer
-              state={states[activeState]}
-              status={status}
-              pause={handlePause}
-              setStatus={setStatus}
-              updateState={handleStateUpdate}
-            />
-          }
+          <TimerLayer
+            state={states[activeState]}
+            status={status}
+            pause={handlePause}
+            setStatus={setStatus}
+            updateState={handleStateUpdate}
+          />
 
           <StateIndicator states={states} activeState={activeState} />
         </div>

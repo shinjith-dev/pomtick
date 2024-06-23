@@ -21,9 +21,9 @@ body {
   background: transparent;
   background: radial-gradient(
     circle,
-    hsl(var(--color-surface)) 0%,
-    /* transparent 10%, */ hsl(var(--color-base)) 80%,
-    hsl(var(--color-base)) 100%
+    hsl(var(--twc-surface)) 0%,
+    /* transparent 10%, */ hsl(var(--twc-base)) 80%,
+    hsl(var(--twc-base)) 100%
   );
 }
 
@@ -31,9 +31,9 @@ body {
   background: transparent;
   background: radial-gradient(
     circle,
-    hsl(var(--color-overlay)) 0%,
-    /* hsl(var(--color-pine)) 30%, */ hsl(var(--color-base)) 80%,
-    hsl(var(--color-base)) 100%
+    hsl(var(--twc-overlay)) 0%,
+    /* hsl(var(--twc-pine)) 30%, */ hsl(var(--twc-base)) 80%,
+    hsl(var(--twc-base)) 100%
   );
 }
 
