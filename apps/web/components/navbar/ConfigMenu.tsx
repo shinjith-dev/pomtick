@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { IconAdjustmentsHorizontal } from "@tabler/icons-react";
-import { TConfig } from "@/lib/types";
+import { TConfig } from "../../lib/types";
 import Switch from "../atoms/Switch";
 import Select from "../atoms/Select";
 import {
@@ -14,7 +14,7 @@ import {
   pomodoroCountChoices,
   pomodoroDurationChoices,
   shortBreakDurationChoices,
-} from "@/lib/defaults";
+} from "../../lib/defaults";
 
 type Props = {
   config: TConfig;

@@ -1,4 +1,4 @@
-import { TState } from "@/lib/types";
+import { TState } from "../../lib/types";
 import { toSentenceCase } from "@repo/lib/utils"; 
 import React from "react";
 import StateProgress from "./StatusProgress";

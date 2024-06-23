@@ -5,7 +5,7 @@ import {
   IconPlayerSkipForward,
   IconRestore,
 } from "@tabler/icons-react";
-import { TStatus } from "@/lib/types";
+import { TStatus } from "../../lib/types";
 
 type Props = {
   status: TStatus;

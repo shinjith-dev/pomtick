@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { nunito } from "@/lib/fonts";
+import { nunito } from "../lib/fonts";
 
 export const metadata: Metadata = {
   title: "Pomtick",

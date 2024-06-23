@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-import { TConfig, TState, TStatus } from "@/lib/types";
-import Background from "@/components/Background";
-import TimerLayer from "@/components/timer";
-import StateIndicator from "@/components/state-indicator";
-import { defaultConfig, defaultStates } from "@/lib/defaults";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/navbar";
+import { TConfig, TState, TStatus } from "../lib/types";
+import Background from "../components/Background";
+import TimerLayer from "../components/timer";
+import StateIndicator from "../components/state-indicator";
+import { defaultConfig, defaultStates } from "../lib/defaults";
+import Footer from "../components/Footer";
+import Navbar from "../components/navbar";
 
 export default function Home() {
   const [status, setStatus] = useState<TStatus>("paused");

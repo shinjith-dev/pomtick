@@ -1,5 +1,5 @@
-import { josephinSans } from "@/lib/fonts";
-import { TTimer } from "@/lib/types";
+import { josephinSans } from "../../lib/fonts";
+import { TTimer } from "../../lib/types";
 import { padStart } from "@repo/lib/utils";
 import React from "react";
 

@@ -1,6 +1,6 @@
 import React from "react";
 // import bg from "@/assets/images/bg.jpg";
-import { TStatus } from "@/lib/types";
+import { TStatus } from "../lib/types";
 
 type Props = { status: TStatus; isBreak: boolean };
 

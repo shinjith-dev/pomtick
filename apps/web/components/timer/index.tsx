@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect } from "react";
 
-import { TState, TStatus } from "@/lib/types";
+import { TState, TStatus } from "../../lib/types";
 import Secondhands from "./Secondhands";
 import CircularProgress from "./CircularProgress";
 import TimerDisplay from "./TimerDisplay";

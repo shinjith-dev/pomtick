@@ -1,10 +1,10 @@
-import { josephinSans } from "@/lib/fonts";
+import { josephinSans } from "../../lib/fonts";
 import Link from "next/link";
 import React, { Dispatch, SetStateAction } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 import ConfigMenu from "./ConfigMenu";
 import { IconHelp } from "@tabler/icons-react";
-import { TConfig } from "@/lib/types";
+import { TConfig } from "../../lib/types";
 
 type Props = {
   hide: boolean;

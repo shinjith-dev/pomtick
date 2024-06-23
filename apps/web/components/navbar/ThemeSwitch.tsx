@@ -6,7 +6,7 @@ import {
   IconPalette,
   IconChevronDown,
 } from "@tabler/icons-react";
-import { TTheme } from "@/lib/types";
+import { TTheme } from "../../lib/types";
 
 type Props = {};
 

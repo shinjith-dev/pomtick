@@ -1,4 +1,4 @@
-import { TTimer } from "@/lib/types";
+import { TTimer } from "../../lib/types";
 import React from "react";
 
 type Props = { pomodoro: TTimer; totalDuration: number };
