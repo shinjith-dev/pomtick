@@ -3,8 +3,9 @@ import "./index.css";
 import { TConfig, TState, TStatus } from "../lib/types";
 import { defaultConfig, defaultStates } from "../lib/defaults";
 import TimerLayer from "./components/timer";
-import StateIndicator from "./components/state-indicator";
+import BottomBar from "./components/bottom-bar";
 import Background from "./components/Background";
+import Appbar from "./components/appbar";
 
 function App() {
   const [status, setStatus] = useState<TStatus>("paused");
@@ -77,6 +78,7 @@ function App() {
     <div
       className={`flex h-screen bg-base w-screen flex-col max-h-screen overflow-hidden`}
     >
+      <Appbar hide={isFocused} />
       <main className="relative z-0 mx-auto w-full max-w-7xl grow">
         <div className="relative flex h-full w-full items-center justify-center text-center text-text">
           <Background status={status} isBreak={!isFocused} />
@@ -88,7 +90,12 @@ function App() {
             updateState={handleStateUpdate}
           />
 
-          <StateIndicator states={states} activeState={activeState} />
+          <BottomBar
+            states={states}
+            activeState={activeState}
+            config={config}
+            updateConfig={setConfig}
+          />
         </div>
       </main>{" "}
     </div>

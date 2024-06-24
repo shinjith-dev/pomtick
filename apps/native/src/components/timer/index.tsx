@@ -32,7 +32,7 @@ const TimerLayer = ({
     { minutes: state?.duration ?? 60, seconds: 0 },
     status === "playing",
     updateState,
-    pause,
+    pause
   );
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const TimerLayer = ({
         totalDuration={state?.duration ?? 60}
       />
 
-      <div className="absolute left-1/2 top-[45%] flex h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 rounded-full sm:h-[270px] sm:w-[270px] md:h-[300px] md:w-[300px]">
+      <div className="absolute left-1/2 top-[42%] flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 rounded-full h-[220px] w-[220px]">
         <TimerDisplay pomodoro={timer} totalDuration={state?.duration ?? 60} />
 
         <PomodoroControls
