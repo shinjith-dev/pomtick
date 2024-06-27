@@ -1,20 +1,32 @@
 import { useEffect, useRef, useState } from "react";
 import "./index.css";
-import { TConfig, TState, TStatus } from "../lib/types";
+import { TConfig, TState, TStatus, TWMode } from "../lib/types";
 import { defaultConfig, defaultStates } from "../lib/defaults";
 import TimerLayer from "./components/timer";
 import BottomBar from "./components/bottom-bar";
 import Background from "./components/Background";
 import Appbar from "./components/appbar";
+import { appWindow } from "@tauri-apps/api/window";
 
 function App() {
   const [status, setStatus] = useState<TStatus>("paused");
+  const [windowMode, setMode] = useState<TWMode>("normal");
   const [config, setConfig] = useState<TConfig>(defaultConfig);
 
   const [states, setStates] = useState<TState[]>(defaultStates);
   const totalStates = useRef<number>(defaultStates.length);
 
   const [activeState, setActive] = useState<number>(0);
+
+  useEffect(() => {
+    appWindow
+      .innerSize()
+      .then((res) => {
+        if (res.width === 300 && res.height === 200) setMode("compact");
+        else setMode("normal");
+      })
+      .catch((err) => console.log("Error fetching window size", err));
+  }, []);
 
   const reset = () => {
     setActive(0);
@@ -87,6 +99,7 @@ function App() {
             status={status}
             pause={handlePause}
             setStatus={setStatus}
+            windowMode={windowMode}
             updateState={handleStateUpdate}
           />
 
@@ -95,9 +108,11 @@ function App() {
             activeState={activeState}
             config={config}
             updateConfig={setConfig}
+            windowMode={windowMode}
+            setWindowMode={setMode}
           />
         </div>
-      </main>{" "}
+      </main>
     </div>
   );
 }

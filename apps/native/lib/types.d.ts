@@ -24,3 +24,4 @@ export type TState = {
 };
 
 export type TTheme = "main" | "moon" | "dawn";
+export type TWMode = "normal" | "compact";

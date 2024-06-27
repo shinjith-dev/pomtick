@@ -4,7 +4,7 @@ type Props = { pomodoro: TTimer };
 
 const Secondhands = ({ pomodoro }: Props) => {
   return (
-    <div className="absolute left-1/2 top-[42%] h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full sm:h-[350px] sm:w-[350px] md:h-[380px] md:w-[380px]">
+    <div className="absolute left-0 top-0 h-full w-full rounded-full">
       {[...new Array(60)].map((_, index) => (
         <div
           key={`second-hand-${index}`}
