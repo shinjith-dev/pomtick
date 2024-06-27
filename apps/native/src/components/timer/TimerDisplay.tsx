@@ -1,20 +1,22 @@
-import { TTimer } from "../../../lib/types";
+import { TTimer, TWMode } from "../../../lib/types";
 import { padStart } from "@repo/lib/utils";
 
-type Props = { pomodoro: TTimer; totalDuration: number };
+type Props = { pomodoro: TTimer; totalDuration: number; windowMode: TWMode };
 
-const TimerDisplay = ({ pomodoro, totalDuration }: Props) => {
+const TimerDisplay = ({ pomodoro, totalDuration, windowMode }: Props) => {
   return (
-    <>
-      <h5 className="font-medium text-subtle text-sm">
+    <div>
+      <h5
+        className={`${windowMode === "normal" ? "text-center text-sm mb-2" : "mb-0 text-left text-xs"} font-medium text-subtle transition-all`}
+      >
         {totalDuration} Mins
       </h5>
       <h3
-        className={`w-full text-center text-6xl font-semibold text-text`}
+        className={`${windowMode === "normal" ? "text-center text-6xl" : "text-left text-5xl"} transition-all w-full font-semibold text-text`}
       >
         {padStart(pomodoro.minutes)}:{padStart(pomodoro.seconds)}
       </h3>
-    </>
+    </div>
   );
 };
 

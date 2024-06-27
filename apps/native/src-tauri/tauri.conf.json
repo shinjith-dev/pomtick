@@ -1,12 +1,12 @@
 {
   "build": {
     "beforeDevCommand": "pnpm vite:dev",
-    "beforeBuildCommand": "pnpm build",
+    "beforeBuildCommand": "pnpm vite:build",
     "devPath": "http://localhost:1420",
     "distDir": "../dist"
   },
   "package": {
-    "productName": "native",
+    "productName": "Pomtick",
     "version": "0.0.0"
   },
   "tauri": {
@@ -57,9 +57,9 @@
         "title": "Pomtick",
         "theme": "Dark",
         "titleBarStyle": "Transparent",
-        "resizable": false,
-        "width": 380,
-        "height": 440,
+        "resizable": true,
+        "width": 300,
+        "height": 200,
         "decorations": false,
         "alwaysOnTop": true
       }
