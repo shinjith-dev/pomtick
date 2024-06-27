@@ -1,7 +1,22 @@
 {
   "name": "pomtick-web",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.1.0",
+  "repository": "https://github.com/shinjith-dev/pomtick",
+  "author": "Shinjith P R",
+  "displayName": "Pomtick Web",
+  "description": "The timer that makes you tick! Pomtick is a multi-platform pomodoro timer with a classy themeable interface.",
+  "homepage": "https://pomtick.pages.dev",
+  "keywords": [
+    "pomodoro",
+    "timer",
+    "productivity",
+    "task",
+    "todo",
+    "tools",
+    "utilities"
+  ],
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
