@@ -18,15 +18,15 @@ function App() {
 
   const [activeState, setActive] = useState<number>(0);
 
-  useEffect(() => {
-    appWindow
-      .innerSize()
-      .then((res) => {
-        if (res.width === 300 && res.height === 200) setMode("compact");
-        else setMode("normal");
-      })
-      .catch((err) => console.log("Error fetching window size", err));
-  }, []);
+  // useEffect(() => {
+  //   appWindow
+  //     .innerSize()
+  //     .then((res) => {
+  //       if (res.width === 300 && res.height === 200) setMode("compact");
+  //       else setMode("normal");
+  //     })
+  //     .catch((err) => console.log("Error fetching window size", err));
+  // }, []);
 
   const reset = () => {
     setActive(0);
@@ -88,10 +88,10 @@ function App() {
 
   return (
     <div
-      className={`flex h-screen bg-base w-screen flex-col max-h-screen overflow-hidden`}
+      className={`flex relative h-screen bg-base w-screen flex-col max-h-screen overflow-hidden`}
     >
       <Appbar hide={isFocused} />
-      <main className="relative z-0 mx-auto w-full max-w-7xl grow">
+      <main className="mx-auto w-full max-w-7xl grow">
         <div className="relative flex h-full w-full items-center justify-center text-center text-text">
           <Background status={status} isBreak={!isFocused} />
           <TimerLayer

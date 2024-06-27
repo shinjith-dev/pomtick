@@ -6,7 +6,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "pomtick",
+    "productName": "Pomtick",
     "version": "0.0.0"
   },
   "tauri": {
