@@ -5,6 +5,7 @@ import CircularProgress from "./CircularProgress";
 import TimerDisplay from "./TimerDisplay";
 import PomodoroControls from "./PomodoroControls";
 import useTimer from "@repo/lib/hooks";
+import LinearProgress from "./LinearProgress";
 
 type Props = {
   status: TStatus;
@@ -49,7 +50,7 @@ const TimerLayer = ({
   return (
     <>
       <div
-        className={`${windowMode === "normal" ? "opacity-100 scale-100" : "opacity-0 scale-0"} -translate-x-1/2 -translate-y-1/2 h-[240px] w-[240px] transition-all left-1/2 top-[42%] absolute duration-300`}
+        className={`${windowMode === "normal" ? "opacity-100 scale-100 h-[240px]" : "opacity-0 scale-0 h-[180px]"} -translate-x-1/2 -translate-y-1/2  w-[240px] transition-all left-1/2 top-[47%] absolute duration-300`}
       >
         <Secondhands pomodoro={timer} />
         <CircularProgress
@@ -59,7 +60,7 @@ const TimerLayer = ({
       </div>
 
       <div
-        className={`absolute left-1/2 top-[42%] flex -translate-x-1/2 -translate-y-1/2 items-center justify-center transition-all gap-2 rounded-full h-[220px] w-[220px] ${windowMode === "normal" ? "flex-col" : "flex-row"}`}
+        className={`absolute flex -translate-y-1/2 items-center transition-all rounded-full w-[220px] ${windowMode === "normal" ? "flex-col gap-2 justify-center left-1/2 -translate-x-1/2 h-[220px] top-[47%]" : "flex-row gap-3 justify-between left-0 px-5 w-full translate-x-0 h-[160px] top-[45%]"}`}
       >
         <TimerDisplay
           pomodoro={timer}
@@ -77,6 +78,12 @@ const TimerLayer = ({
           }
         />
       </div>
+      {windowMode === "compact" && (
+        <LinearProgress
+          pomodoro={timer}
+          totalDuration={state?.duration ?? 60}
+        />
+      )}
     </>
   );
 };

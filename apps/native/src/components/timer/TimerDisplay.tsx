@@ -12,7 +12,7 @@ const TimerDisplay = ({ pomodoro, totalDuration, windowMode }: Props) => {
         {totalDuration} Mins
       </h5>
       <h3
-        className={`${windowMode === "normal" ? "text-center text-6xl" : "text-left text-4xl"} transition-all w-full font-semibold text-text`}
+        className={`${windowMode === "normal" ? "text-center text-6xl" : "text-left text-5xl"} transition-all w-full font-semibold text-text`}
       >
         {padStart(pomodoro.minutes)}:{padStart(pomodoro.seconds)}
       </h3>

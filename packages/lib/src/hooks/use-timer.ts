@@ -19,7 +19,7 @@ const useTimer = (
   );
 
   const initialValue = useRef<TTimer>(value);
-  const intervalId = useRef<null | NodeJS.Timeout>(null);
+  const intervalId = useRef<any>(null);
 
   useEffect(() => {
     if (state === "playing")

@@ -2,7 +2,7 @@ import { TStatus } from "../../lib/types";
 
 type Props = { status: TStatus; isBreak: boolean };
 
-const Background = ({ status, isBreak }: Props) => {
+const Background = ({  isBreak }: Props) => {
   return (
     <>
       {/* <Image src={bg} fill alt="bg" className="object-cover" /> */}

@@ -88,9 +88,9 @@ const BottomBar = ({
         </>
       ) : (
         <div className="grow text-left">
-          <h5>{toSentenceCase(activeStateType)}</h5>
+          <h5 className="text-sm font-medium mb-0.5">{toSentenceCase(activeStateType)}</h5>
           <p
-            className={`text-xs font-medium pb-1.5 sm:text-sm ${activeStateType === "pomodoro" ? "text-foam" : "text-iris"}`}
+            className={`text-xs pb-1.5 sm:text-sm ${activeStateType === "pomodoro" ? "text-foam" : "text-iris"}`}
           >
             {getStatePhrase()}
           </p>

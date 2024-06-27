@@ -23,16 +23,20 @@ const PomodoroControls = ({
 }: Props) => {
   return (
     <div
-      className={`${windowMode === "normal" ? "flex-row" : "flex-row-reverse"} flex items-center justify-center text-2xl text-subtle gap-3 pt-4`}
+      className={`${windowMode === "normal" ? "flex-row gap-3" : "flex-row-reverse gap-2"} flex items-center justify-center text-2xl text-subtle  pt-4`}
     >
       <button
         className="rounded-full p-1.5 transition-all hover:text-text"
         onClick={reset}
         title="Reset"
       >
-        <IconRestore />
+        <IconRestore
+          className={`transition-all ${windowMode === "normal" ? "w-6 h-6" : "h-5 w-5"}`}
+        />
       </button>
-      <div className="flex items-center gap-3">
+      <div
+        className={`${windowMode === "normal" ? "gap-3" : "gap-3"} flex items-center`}
+      >
         <button
           className="rounded-full bg-foam p-2 text-surface transition-all hover:bg-foam/80"
           tabIndex={1}
@@ -41,11 +45,11 @@ const PomodoroControls = ({
         >
           {status === "playing" ? (
             <IconPlayerPauseFilled
-              className={`transition-all ${windowMode === "normal" ? "w-7 h-7" : "h-6 w-6"}`}
+              className={`transition-all ${windowMode === "normal" ? "w-7 h-7" : "h-4 w-4"}`}
             />
           ) : (
             <IconPlayerPlayFilled
-              className={`transition-all ${windowMode === "normal" ? "w-7 h-7" : "h-6 w-6"}`}
+              className={`transition-all ${windowMode === "normal" ? "w-7 h-7" : "h-4 w-4"}`}
             />
           )}
         </button>
@@ -54,7 +58,9 @@ const PomodoroControls = ({
           onClick={skip}
           title="Skip"
         >
-          <IconPlayerSkipForward />
+          <IconPlayerSkipForward
+            className={`transition-all ${windowMode === "normal" ? "w-6 h-6" : "h-5 w-5"}`}
+          />
         </button>
       </div>
     </div>

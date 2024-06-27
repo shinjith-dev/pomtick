@@ -40,7 +40,7 @@ const ConfigMenu = ({ config, updateConfig }: Props) => {
         <IconAdjustmentsHorizontal size={20} />
       </button>
       {expanded && (
-        <div className="absolute right-0 top-12 z-20 w-screen min-w-72 rounded-md px-4 py-2">
+        <div className="absolute left-0 bottom-16 z-20 w-screen min-w-72 rounded-md px-4 py-2">
           <ul className="h-full space-y-1 rounded-md bg-surface/75 p-2 font-medium shadow-2xl blur-effect">
             <li>
               <div className="flex w-full items-center justify-between rounded p-2 hover:bg-muted/20">

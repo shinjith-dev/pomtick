@@ -13,7 +13,7 @@ const Appbar = ({ hide }: Props) => {
 
   return (
     <nav
-      className={`relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between pt-4 px-5 text-sm text-text transition-all duration-500  ${hide ? "-translate-y-8 opacity-0" : "translate-y-0 opacity-100"}`}
+      className={`relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between pt-4 px-5 text-sm text-text transition-all duration-500  translate-y-0 opacity-100`}
     >
       <h4 className={`text-lg font-bold sm:text-xl md:text-2xl`}>Pomtick</h4>
 
