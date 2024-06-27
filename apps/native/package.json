@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "vite:dev": "vite",
-    "dev": "tauri dev",
-    "build": "tsc && vite build",
+    "vite:build": "tsc && vite build",
+    "tauri:dev": "tauri dev",
+    "dev": "vite",
+    "build": "NO_STRIP=true tauri build",
     "preview": "vite preview",
     "tauri": "tauri"
   },

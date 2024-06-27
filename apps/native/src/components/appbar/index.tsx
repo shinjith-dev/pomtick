@@ -6,7 +6,7 @@ type Props = {
   hide: boolean;
 };
 
-const Appbar = ({ hide }: Props) => {
+const Appbar = ({}: Props) => {
   const closeWindow = async () => {
     appWindow.close();
   };
