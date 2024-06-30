@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [0.1.0] - 2024-06-30
 
 ### 🚀 Features
 
@@ -98,6 +98,7 @@ All notable changes to this project will be documented in this file.
 - Try 3
 - Try 3
 - Try 4
+- Final try
 
 ### Hotfix
 

@@ -69,13 +69,13 @@ jobs:
       - name: change directory
         run: cd apps/native
 
-      - name: create release note
-        run: |
-          {
-            echo 'RELEASE_NOTES<<EOF'
-            npx git-cliff --bump --unreleased
-            echo EOF
-          } >> "$GITHUB_ENV"
+      - name: Read release notes
+        uses: guibranco/github-file-reader-action-v2@latest
+        with:
+          path: ".github/RELEASE_NOTES.md"
+
+      - name: File contents
+        run: echo "${ steps.read_file.outputs.contents }"
 
       - uses: tauri-apps/tauri-action@v0
         env:
@@ -83,7 +83,7 @@ jobs:
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: 'Pomtick v__VERSION__'
-          releaseBody: ${{ env.RELEASE_NOTES }}
+          releaseBody: ${{ steps.read_file.outputs.contents }}
           releaseDraft: false
           prerelease: false   # Commented to use semantic-release
           args: ${{ matrix.args }}
