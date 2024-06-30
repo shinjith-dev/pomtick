@@ -70,7 +70,12 @@ jobs:
         run: cd apps/native
 
       - name: create release note
-        run: echo "RELEASE_NOTES=$(npx git-cliff --current)" >> "$GITHUB_ENV"
+        run: |
+          {
+            echo 'RELEASE_NOTES<<EOF'
+            npx git-cliff --current
+            echo EOF
+          } >> "$GITHUB_ENV"
 
       - uses: tauri-apps/tauri-action@v0
         env:
