@@ -72,7 +72,7 @@ jobs:
       - name: Read release notes
         uses: guibranco/github-file-reader-action-v2@latest
         with:
-          path: ".github/RELEASE_NOTES.md"
+          path: "../../.github/RELEASENOTES.md"
 
       - uses: tauri-apps/tauri-action@v0
         env:

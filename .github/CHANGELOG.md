@@ -50,7 +50,7 @@ All notable changes to this project will be documented in this file.
 - Add useTimer hook
 - Types isolation for use-timer.ts
 
-### ⚙️ Miscellaneous Tasks
+### Chore
 
 - Update README
 - Update README
@@ -73,18 +73,9 @@ All notable changes to this project will be documented in this file.
 - Optimize for release
 - Update versions and meta infos
 - Safe commit
-- Move semantic-release config to apps/native
 - *(release)* 1.0.0 [skip ci]
-- Fix semantics-release not accepting config
-- Config not recognizing
-- Update output assets path
 - *(release)* 1.0.0 [skip ci]
-- Clean publcih
 - *(release)* 1.0.0 [skip ci]
-- Fix assets not uploading
-- Forced release
-- Try 1
-- Try 2
 - *(release)* 1.0.0 [skip ci]
 - Merge branch 'release' of github.com:shinjith-dev/pomtick into release
 - *(release)* 0.1.1
@@ -93,12 +84,26 @@ All notable changes to this project will be documented in this file.
 - *(release)* 0.1.1
 - *(release)* 0.1.2
 - Safe commit
+
+### Ci
+
+- Move semantic-release config to apps/native
+- Fix semantics-release not accepting config
+- Config not recognizing
+- Update output assets path
+- Clean publcih
+- Fix assets not uploading
+- Forced release
+- Try 1
+- Try 2
 - Add release notes
 - Fix error
 - Try 3
 - Try 3
 - Try 4
 - Final try
+- Second final try
+- Third last
 
 ### Hotfix
 
