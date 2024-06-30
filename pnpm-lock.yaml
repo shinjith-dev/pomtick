@@ -14,6 +14,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.2.2
         version: 19.2.2
+      git-cliff:
+        specifier: ^2.4.0
+        version: 2.4.0
       husky:
         specifier: ^9.0.11
         version: 9.0.11
@@ -4993,6 +4996,69 @@ packages:
     resolution: {integrity: sha512-ZCuZCnlqNzjb4QprAzXKdpp/gh6KTxSJuw3IBsPnV/7fV4NxC9ckB+vPTt8w7fJA0TaSD7c55BR47JD6MEDyDw==}
     dependencies:
       resolve-pkg-maps: 1.0.0
+    dev: true
+
+  /git-cliff-darwin-arm64@2.4.0:
+    resolution: {integrity: sha512-KImSJhO8pTkKCauYlKmx7vNz3caIIBs0QW3JIS0uwUXGGJas4uuvGXlGTbLqVxdCur2yBwRDD6xobtuLC0yQ4w==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /git-cliff-darwin-x64@2.4.0:
+    resolution: {integrity: sha512-KtJ/V0i9xxs5iXl+hh1J4wyhMOrMRNylfSQC0lMJ+ScIIr1sZdF9qz4Mk06ZdJD7HnvPWawBhLcpCKVXkaeufQ==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /git-cliff-linux-arm64@2.4.0:
+    resolution: {integrity: sha512-ZSL5Jw06pgJ0F2e4Dv7j7l69qmq718NA8IKIUscjayc+71iuzyOw0T2tnbkV6H1h1rDjP9LMXGyPtLIvGz62BA==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /git-cliff-linux-x64@2.4.0:
+    resolution: {integrity: sha512-1ckJ+2io52HuBnEeS87PeFanEPt3BuZoHKcXfkQPYFj9C91ckHgY7OCqze38ejy1V/cfKhlVJsbjbVMxixRaog==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /git-cliff-windows-arm64@2.4.0:
+    resolution: {integrity: sha512-DZf+C7lTmCvvBjgtOHMcXJC5KaIL+QDE/C6cYxzLMgRcn9wGNTm2ot0jkAN2I1PmSmg4I1/89iiahSWHfG1m4A==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /git-cliff-windows-x64@2.4.0:
+    resolution: {integrity: sha512-bYUQIyG975KdPza/bNDxwBFpqTZEvF1zPKlhThgPgdCKdzbdezsgaFuaDbnM+vsmBD751ZJGWLQ7aJCSBG2s/Q==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /git-cliff@2.4.0:
+    resolution: {integrity: sha512-e+4mMArblL4mrD/auUTa3bf3U1ahAuhIRb1bxTIWCBxnR6UqVctGaLf3pJJufaKi3nqTT7JvrSYu9Q+L6yiAaw==}
+    engines: {node: '>=18.19 || >=20.6 || >=21'}
+    hasBin: true
+    dependencies:
+      execa: 8.0.1
+    optionalDependencies:
+      git-cliff-darwin-arm64: 2.4.0
+      git-cliff-darwin-x64: 2.4.0
+      git-cliff-linux-arm64: 2.4.0
+      git-cliff-linux-x64: 2.4.0
+      git-cliff-windows-arm64: 2.4.0
+      git-cliff-windows-x64: 2.4.0
     dev: true
 
   /git-hooks-list@3.1.0:
