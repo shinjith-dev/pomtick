@@ -56,7 +56,7 @@ If you would like to contribute by developing a new feature or by fixing bugs/er
 
     - `fix:` : To address a fix to the codebase.
 
-    - `build:`, `chore:`, `style:`, `refactor:` are some other examples.
+    - `build:`, `ci:`, `docs:`, `perf:`, `refactor:`, `test:` are other possbile values.
 
 - A body can be added to the message to include detailed explanations in the commit.
 
