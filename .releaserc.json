@@ -3,15 +3,15 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
+    "@semantic-release/github",
     [
-      "@semantic-release/github",
+      "@semantic-release/git",
       {
         "assets": [
           "./apps/native/src-tauri/target/release/**/*.{msi,exe,app,dmg,deb,AppImage}"
         ]
       }
     ],
-    "@semantic-release/git"
+    "@semantic-release/github"
   ]
 }
