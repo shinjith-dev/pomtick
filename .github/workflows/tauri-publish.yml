@@ -66,13 +66,16 @@ jobs:
       - name: build internal packages
         run: pnpm --filter "./packages/**" build
 
+ 
+
+      - name: Read release note
+        id: releasenote
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ".github/RELEASENOTES.md"
+
       - name: change directory
         run: cd apps/native
-
-      - name: Read release notes
-        uses: guibranco/github-file-reader-action-v2@latest
-        with:
-          path: "../../.github/RELEASENOTES.md"
 
       - uses: tauri-apps/tauri-action@v0
         env:
@@ -80,7 +83,7 @@ jobs:
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: 'Pomtick v__VERSION__'
-          releaseBody: ${{ steps.read_file.outputs.contents }}
+          releaseBody: ${{ steps.releasenote.outputs.contents }}
           releaseDraft: false
           prerelease: false   # Commented to use semantic-release
           args: ${{ matrix.args }}
