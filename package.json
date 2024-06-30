@@ -1,7 +1,7 @@
 {
   "name": "pomtick",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "https://github.com/shinjith-dev/pomtick",
   "author": "Shinjith P R",
   "displayName": "Pomtick",
@@ -22,7 +22,8 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "standard-version"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
