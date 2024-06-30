@@ -11,7 +11,6 @@
           "./apps/native/src-tauri/target/release/**/*.{msi,exe,app,dmg,deb,AppImage}"
         ]
       }
-    ],
-    "@semantic-release/github"
+    ]
   ]
 }
