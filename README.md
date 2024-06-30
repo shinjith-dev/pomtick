@@ -7,9 +7,10 @@
 
 <div align="center">
 
-  ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/shinjith-dev/pomtick/tauri-publish.yml?style=for-the-badge&logo=github&logoColor=ffffff&labelColor=26233a)
-  ![GitHub Release](https://img.shields.io/github/v/release/shinjith-dev/pomtick?style=for-the-badge&logo=git%20lfs&logoColor=ffffff&labelColor=26233a)
   ![Website](https://img.shields.io/website?url=https%3A%2F%2Fpomtick.pages.dev&up_message=live&style=for-the-badge&logo=gitconnected&logoColor=ffffff&labelColor=26233a)
+  ![GitHub Release](https://img.shields.io/github/v/release/shinjith-dev/pomtick?style=for-the-badge&logo=git%20lfs&logoColor=ffffff&labelColor=26233a)
+  <!-- ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/shinjith-dev/pomtick/total?style=for-the-badge&logo=git%20lfs&logoColor=ffffff&labelColor=26233a&logo=remove.bg) -->
+  ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/shinjith-dev/pomtick/tauri-publish.yml?style=for-the-badge&logo=github&logoColor=ffffff&labelColor=26233a)
 
   [Pomtick](https://pomtick.pages.dev) is a simple classy productivity timer with cross platform support 🎉
   

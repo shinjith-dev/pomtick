@@ -23,8 +23,10 @@ If you would like to contribute by developing a new feature or by fixing bugs/er
 
 ```bash
 <type>([optional scope]): <description>  # subject
-
+# <blank-line>
 [optional body]
+# <blank-line>
+[optional footer]
 ```
 
 ### Scope
@@ -32,9 +34,13 @@ If you would like to contribute by developing a new feature or by fixing bugs/er
 - Scope of the changes included in the commit.
 - It can be:
     - `global` or simply omit the scope
+
         ```bash
         <type>: <description>
-        ...
+        # <blank-line>
+        [optional body]
+        # <blank-line>
+        [optional footer]
         ```
     - `web`
     - `native`
@@ -64,6 +70,11 @@ If you would like to contribute by developing a new feature or by fixing bugs/er
 
 - Try to use multple lines of body, where each line does not exceed 72 characters.
 
+### Footer
+
+- You may add extra info like *Signed-off-by:* in footer.
+
 ------
 
+<br />
 Thank you for contributing! :heart:
