@@ -19,50 +19,7 @@ If you would like to contribute by developing a new feature or by fixing bugs/er
 
 ## Commit Message Guidelines
 
-- Final format for a commit message:
-
-```bash
-<type>([optional scope]): <description>  # subject
-
-[optional body]
-```
-
-### Scope
-
-- Scope of the changes included in the commit.
-- It can be:
-    - `global` or simply omit the scope
-        ```bash
-        <type>: <description>
-        ...
-        ```
-    - `web`
-    - `native`
-    - or any `app` or `package`
-
-### Message Subject
-
-- Imperative Mood: Create commit messages in the imperative mood. Start with a verb to indicate what the commit does. For example:
-
-    Use `fix: Fix bug #67` than `fix: Fixed bug #67`
-
-- Short and Summarized: Try to fit the subject line inside 50 characters. Avoid trailing period and unneccessary words/symbols.
-
-### Type and Message Body
-
-- A type preifx in the subject line can be used to represent type of the changes included in the commit. Some of the commonly used types are:
-
-    - `feat:` : To summarize a new feature in the codebase.
-
-    - `fix:` : To address a fix to the codebase.
-
-    - `build:`, `chore:`, `style:`, `refactor:` are some other examples.
-
-- A body can be added to the message to include detailed explanations in the commit.
-
-- Body is added by leaving a blank line after the subject line.
-
-- Try to use multple lines of body, where each line does not exceed 72 characters.
+This project follows [Angular commit message conventions](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#-commit-message-format).
 
 ------
 
