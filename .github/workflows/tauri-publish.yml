@@ -74,9 +74,6 @@ jobs:
         with:
           path: ".github/RELEASE_NOTES.md"
 
-      - name: File contents
-        run: echo "${ steps.read_file.outputs.contents }"
-
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
