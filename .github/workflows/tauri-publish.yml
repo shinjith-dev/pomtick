@@ -73,7 +73,7 @@ jobs:
         run: |
           {
             echo 'RELEASE_NOTES<<EOF'
-            npx git-cliff --current
+            npx git-cliff --bump --unreleased
             echo EOF
           } >> "$GITHUB_ENV"
 
