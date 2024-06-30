@@ -23,7 +23,7 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky",
-    "release": "git-cliff --bump --unreleased -o .github/RELEASENOTES.md",
+    "release": "git-cliff --bump --unreleased --sort newest -o .github/RELEASENOTE.md",
     "changelog":"git-cliff -o .github/CHANGELOG.md"
   },
   "devDependencies": {
