@@ -26,6 +26,9 @@ importers:
       prettier:
         specifier: ^3.2.5
         version: 3.3.2
+      semantic-release:
+        specifier: ^24.0.0
+        version: 24.0.0(typescript@5.5.2)
       turbo:
         specifier: ^2.0.4
         version: 2.0.4
