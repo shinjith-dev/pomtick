@@ -8,7 +8,7 @@
       "@semantic-release/github",
       {
         "assets": [
-          "./src-tauri/target/release/**/*.{msi,exe,app,dmg,deb,AppImage}"
+          "./apps/native/src-tauri/target/release/**/*.{msi,exe,app,dmg,deb,AppImage}"
         ]
       }
     ],
