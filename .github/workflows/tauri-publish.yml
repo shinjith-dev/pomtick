@@ -69,13 +69,16 @@ jobs:
       - name: change directory
         run: cd apps/native
 
+      - name: create release note
+        run: echo "RELEASE_NOTES=$(npx git-cliff --current)" >> "$GITHUB_ENV"
+
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName: pomtick-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
+          tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: 'Pomtick v__VERSION__'
-          releaseBody: 'See the assets to download this version and install.'
+          releaseBody: "$RELEASE_NOTES"
           releaseDraft: false
           prerelease: false   # Commented to use semantic-release
           args: ${{ matrix.args }}
